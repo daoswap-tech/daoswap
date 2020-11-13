@@ -1,0 +1,25 @@
+{
+  "name": "Daoswap",
+  "logoURI": "https://daoswap-tech.github.io/daoswap-interface/daoswap.svg",
+  "keywords": ["defi", "doi"],
+  "timestamp": "2020-10-16T01:40:34.305Z",
+  "tokens": [
+    {
+      "chainId": 4,
+      "address": "0x29Ac4ed3Ad8457B6Fb75B336D688C9094AD08B4b",
+      "name": "Daoswap",
+      "symbol": "DOI",
+      "decimals": 18,
+      "logoURI": "https://daoswap-tech.github.io/daoswap-interface/daoswap.svg"
+    },
+    {
+      "chainId": 4,
+      "address": "0x1599A352A39eb03777A1eB508eF80D17743C196D",
+      "name": "DaoswapNTC",
+      "symbol": "NTC",
+      "decimals": 18,
+      "logoURI": "https://daoswap-tech.github.io/daoswap-interface/daoswap.svg"
+    }
+  ],
+  "version": { "major": 0, "minor": 0, "patch": 0 }
+}
