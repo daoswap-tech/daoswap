@@ -21,13 +21,27 @@ export const AMPL = new Token(ChainId.MAINNET, '0xD46bA6D942050d489DBd938a2C909A
 export const WBTC = new Token(ChainId.MAINNET, '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599', 18, 'WBTC', 'Wrapped BTC')
 
 // TODO:Daoswap 添加 Rinkeby 链上的代币信息
-export const DOI = new Token(ChainId.RINKEBY, '0x29Ac4ed3Ad8457B6Fb75B336D688C9094AD08B4b', 18, 'DOI', 'Daoswap')
-export const NTC = new Token(
+export const NTC_RINKEBY = new Token(
   ChainId.RINKEBY,
   '0x1599A352A39eb03777A1eB508eF80D17743C196D',
   18,
   'DOI',
   'Noodles Test Coin'
+)
+// TODO:Daoswap 添加 Ropsten 链上的代币信息
+export const NTC_ROPSTEN = new Token(
+  ChainId.ROPSTEN,
+  '0x16E609731B2831c02d629846145200dA9726b939',
+  18,
+  'DOI',
+  'Noodles Test Coin'
+)
+export const NTCT_ROPSTEN = new Token(
+  ChainId.ROPSTEN,
+  '0x6805C88677eC14aA07c5281932586378430abFc4',
+  18,
+  'DOI',
+  'Noodles Test Coin Two'
 )
 
 // Block time here is slightly higher (~1s) than average in order to avoid ongoing proposals past the displayed time
@@ -42,11 +56,11 @@ export const TIMELOCK_ADDRESS = '0x1a9C8182C09F50C8318d769245beA52c32BE35BC'
 const UNI_ADDRESS = '0x29Ac4ed3Ad8457B6Fb75B336D688C9094AD08B4b'
 export const UNI: { [chainId in ChainId]: Token } = {
   [ChainId.MAINNET]: new Token(ChainId.MAINNET, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
-  [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
-  [ChainId.ROPSTEN]: new Token(ChainId.ROPSTEN, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
-  [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
   // TODO:Daoswap 代替UNI的代币信息
-  [ChainId.KOVAN]: new Token(ChainId.KOVAN, UNI_ADDRESS, 18, 'DOI', 'Daoswap')
+  [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, UNI_ADDRESS, 18, 'DOI', 'Daoswap'),
+  [ChainId.ROPSTEN]: new Token(ChainId.ROPSTEN, UNI_ADDRESS, 18, 'DOI', 'Daoswap'),
+  [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
+  [ChainId.KOVAN]: new Token(ChainId.KOVAN, UNI_ADDRESS, 18, 'UNI', 'Uniswap')
 }
 
 export const COMMON_CONTRACT_NAMES: { [address: string]: string } = {

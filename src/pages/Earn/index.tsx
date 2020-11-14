@@ -50,15 +50,18 @@ export default function Earn() {
           <CardSection>
             <AutoColumn gap="md">
               <RowBetween>
-                <TYPE.white fontWeight={600}>Uniswap liquidity mining</TYPE.white>
+                {/* // TODO:Daoswap Uniswap -> Daoswap */}
+                <TYPE.white fontWeight={600}>Daoswap liquidity mining</TYPE.white>
               </RowBetween>
               <RowBetween>
                 <TYPE.white fontSize={14}>
-                  Deposit your Liquidity Provider tokens to receive UNI, the Uniswap protocol governance token.
+                  {/* // TODO:Daoswap UNI -> DOI */}
+                  Deposit your Liquidity Provider tokens to receive DOI, the Uniswap protocol governance token.
                 </TYPE.white>
               </RowBetween>{' '}
+              {/* 注释隐藏 */}
               <ExternalLink
-                style={{ color: 'white', textDecoration: 'underline' }}
+                style={{ color: 'white', textDecoration: 'underline', display: 'none' }}
                 href="https://uniswap.org/blog/uni/"
                 target="_blank"
               >

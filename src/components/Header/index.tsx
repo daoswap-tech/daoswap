@@ -315,8 +315,9 @@ export default function Header() {
             {t('pool')}
           </StyledNavLink>
           {/* 注释隐藏 style={{ display: 'none' }} */}
+          {/* // TODO:Daoswap UNI -> DOI */}
           <StyledNavLink id={`stake-nav-link`} to={'/uni'}>
-            UNI
+            DOI
           </StyledNavLink>
           {/* 注释隐藏 */}
           <StyledNavLink id={`stake-nav-link`} to={'/vote'} style={{ display: 'none' }}>

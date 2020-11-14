@@ -218,9 +218,10 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
               <TYPE.black fontWeight={600}>Weekly Rewards</TYPE.black>
             </div>
 
+            {/* // TODO:Daoswap UNI -> DOI */}
             <TYPE.black>
               {hypotheticalRewardRate.multiply((60 * 60 * 24 * 7).toString()).toSignificant(4, { groupSeparator: ',' })}{' '}
-              UNI / week
+              DOI / week
             </TYPE.black>
           </HypotheticalRewardRate>
 

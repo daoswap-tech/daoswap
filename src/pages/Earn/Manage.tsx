@@ -176,11 +176,12 @@ export default function Manage({
         <PoolData>
           <AutoColumn gap="sm">
             <TYPE.body style={{ margin: 0 }}>Pool Rate</TYPE.body>
+            {/* // TODO:Daoswap UNI -> DOI */}
             <TYPE.body fontSize={24} fontWeight={500}>
               {stakingInfo?.totalRewardRate
                 ?.multiply((60 * 60 * 24 * 7).toString())
                 ?.toFixed(0, { groupSeparator: ',' }) ?? '-'}
-              {' UNI / week'}
+              {' DOI / week'}
             </TYPE.body>
           </AutoColumn>
         </PoolData>
@@ -264,7 +265,8 @@ export default function Manage({
             <AutoColumn gap="sm">
               <RowBetween>
                 <div>
-                  <TYPE.black>Your unclaimed UNI</TYPE.black>
+                  {/* // TODO:Daoswap UNI -> DOI */}
+                  <TYPE.black>Your unclaimed DOI</TYPE.black>
                 </div>
                 {stakingInfo?.earnedAmount && JSBI.notEqual(BIG_INT_ZERO, stakingInfo?.earnedAmount?.raw) && (
                   <ButtonEmpty
@@ -293,10 +295,11 @@ export default function Manage({
                   <span role="img" aria-label="wizard-icon" style={{ marginRight: '8px ' }}>
                     ⚡
                   </span>
+                  {/* // TODO:Daoswap UNI -> DOI */}
                   {stakingInfo?.rewardRate
                     ?.multiply((60 * 60 * 24 * 7).toString())
                     ?.toSignificant(4, { groupSeparator: ',' }) ?? '-'}
-                  {' UNI / week'}
+                  {' DOI / week'}
                 </TYPE.black>
               </RowBetween>
             </AutoColumn>
@@ -306,7 +309,8 @@ export default function Manage({
           <span role="img" aria-label="wizard-icon" style={{ marginRight: '8px' }}>
             ⭐️
           </span>
-          When you withdraw, the contract will automagically claim UNI on your behalf!
+          {/* // TODO:Daoswap UNI -> DOI */}
+          When you withdraw, the contract will automagically claim DOI on your behalf!
         </TYPE.main>
 
         {!showAddLiquidityButton && (

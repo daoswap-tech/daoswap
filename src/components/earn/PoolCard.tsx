@@ -139,9 +139,10 @@ export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) 
         </RowBetween>
         <RowBetween>
           <TYPE.white> Pool rate </TYPE.white>
+          {/* // TODO:Daoswap UNI -> DOI */}
           <TYPE.white>{`${stakingInfo.totalRewardRate
             ?.multiply(`${60 * 60 * 24 * 7}`)
-            ?.toFixed(0, { groupSeparator: ',' })} UNI / week`}</TYPE.white>
+            ?.toFixed(0, { groupSeparator: ',' })} DOI / week`}</TYPE.white>
         </RowBetween>
       </StatContainer>
 
@@ -157,9 +158,10 @@ export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) 
               <span role="img" aria-label="wizard-icon" style={{ marginRight: '0.5rem' }}>
                 ⚡
               </span>
+              {/* // TODO:Daoswap UNI -> DOI */}
               {`${stakingInfo.rewardRate
                 ?.multiply(`${60 * 60 * 24 * 7}`)
-                ?.toSignificant(4, { groupSeparator: ',' })} UNI / week`}
+                ?.toSignificant(4, { groupSeparator: ',' })} DOI / week`}
             </TYPE.black>
           </BottomSection>
         </>
