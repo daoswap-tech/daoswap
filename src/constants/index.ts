@@ -25,23 +25,8 @@ export const NTC_RINKEBY = new Token(
   ChainId.RINKEBY,
   '0x1599A352A39eb03777A1eB508eF80D17743C196D',
   18,
-  'DOI',
+  'NTC',
   'Noodles Test Coin'
-)
-// TODO:Daoswap 添加 Ropsten 链上的代币信息
-export const NTC_ROPSTEN = new Token(
-  ChainId.ROPSTEN,
-  '0x16E609731B2831c02d629846145200dA9726b939',
-  18,
-  'DOI',
-  'Noodles Test Coin'
-)
-export const NTCT_ROPSTEN = new Token(
-  ChainId.ROPSTEN,
-  '0x6805C88677eC14aA07c5281932586378430abFc4',
-  18,
-  'DOI',
-  'Noodles Test Coin Two'
 )
 
 // Block time here is slightly higher (~1s) than average in order to avoid ongoing proposals past the displayed time
@@ -58,7 +43,7 @@ export const UNI: { [chainId in ChainId]: Token } = {
   [ChainId.MAINNET]: new Token(ChainId.MAINNET, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
   // TODO:Daoswap 代替UNI的代币信息
   [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, UNI_ADDRESS, 18, 'DOI', 'Daoswap'),
-  [ChainId.ROPSTEN]: new Token(ChainId.ROPSTEN, UNI_ADDRESS, 18, 'DOI', 'Daoswap'),
+  [ChainId.ROPSTEN]: new Token(ChainId.ROPSTEN, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
   [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
   [ChainId.KOVAN]: new Token(ChainId.KOVAN, UNI_ADDRESS, 18, 'UNI', 'Uniswap')
 }
