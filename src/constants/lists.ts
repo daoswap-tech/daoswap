@@ -1,6 +1,6 @@
 // the Uniswap Default token list lives here
 // export const DEFAULT_TOKEN_LIST_URL = 'tokens.uniswap.eth'
-export const DEFAULT_TOKEN_LIST_URL = 'https://daoswap-tech.github.io/daoswap/daoswap.tokenlist.json'
+export const DEFAULT_TOKEN_LIST_URL = 'https://app.daoswap.global/daoswap.tokenlist.json'
 
 export const DEFAULT_LIST_OF_LISTS: string[] = [
   DEFAULT_TOKEN_LIST_URL,
@@ -18,5 +18,5 @@ export const DEFAULT_LIST_OF_LISTS: string[] = [
   'https://raw.githubusercontent.com/compound-finance/token-list/master/compound.tokenlist.json',
   'https://defiprime.com/defiprime.tokenlist.json',
   'https://umaproject.org/uma.tokenlist.json',
-  'https://daoswap-tech.github.io/daoswap/daoswap.tokenlist.json'
+  'https://app.daoswap.global/daoswap.tokenlist.json'
 ]
