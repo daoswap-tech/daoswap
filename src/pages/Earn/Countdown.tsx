@@ -1,11 +1,14 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import { STAKING_GENESIS, REWARDS_DURATION_DAYS } from '../../state/stake/hooks'
+// TODO:Daoswap 修改时间引用
+// import { STAKING_GENESIS, REWARDS_DURATION_DAYS } from '../../state/stake/hooks'
+import { STAKING_GENESIS } from '../../state/stake/hooks'
 import { TYPE } from '../../theme'
 
 const MINUTE = 60
 const HOUR = MINUTE * 60
 const DAY = HOUR * 24
-const REWARDS_DURATION = DAY * REWARDS_DURATION_DAYS
+// TODO:Daoswap 修改活动时长
+const REWARDS_DURATION = MINUTE * 30 // DAY * REWARDS_DURATION_DAYS
 
 export function Countdown({ exactEnd }: { exactEnd?: Date }) {
   // get end/beginning times
