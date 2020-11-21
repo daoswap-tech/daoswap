@@ -53,9 +53,17 @@ export const STAKING_REWARDS_INFO: {
     //   tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
     //   stakingRewardAddress: '0x079724dd6d6774c36b366ED9Bd2718CF5535A032'
     // },
+    // {
+    //   tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
+    //   stakingRewardAddress: '0x02d7bE436AE520DAf110602E3BF761dc13412907'
+    // }
+    // {
+    //   tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
+    //   stakingRewardAddress: '0x7B1e4CD1edfd2dA7Beb43A96A1ab615E985c3a83'
+    // }
     {
       tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
-      stakingRewardAddress: '0x7B1e4CD1edfd2dA7Beb43A96A1ab615E985c3a83'
+      stakingRewardAddress: '0xB312fCfC8102f6E7185170bb51f00f96208a7a27'
     }
   ]
 }
