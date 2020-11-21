@@ -41,14 +41,14 @@ export const STAKING_REWARDS_INFO: {
   // ],
   // TODO:Daoswap 配置奖励池
   [ChainId.RINKEBY]: [
-    {
-      tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
-      stakingRewardAddress: '0x438812b750dd37d7A709Dd0Ac95e32ABa23cf18e'
-    },
-    {
-      tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
-      stakingRewardAddress: '0xEF8849eb4Bc579ebf5BfCE00A574eEf9833af013'
-    },
+    // {
+    //   tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
+    //   stakingRewardAddress: '0x438812b750dd37d7A709Dd0Ac95e32ABa23cf18e'
+    // },
+    // {
+    //   tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
+    //   stakingRewardAddress: '0xEF8849eb4Bc579ebf5BfCE00A574eEf9833af013'
+    // },
     {
       tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
       stakingRewardAddress: '0x079724dd6d6774c36b366ED9Bd2718CF5535A032'
