@@ -43,6 +43,10 @@ export const STAKING_REWARDS_INFO: {
   [ChainId.RINKEBY]: [
     {
       tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
+      stakingRewardAddress: '0x438812b750dd37d7A709Dd0Ac95e32ABa23cf18e'
+    },
+    {
+      tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
       stakingRewardAddress: '0xEF8849eb4Bc579ebf5BfCE00A574eEf9833af013'
     }
   ]
