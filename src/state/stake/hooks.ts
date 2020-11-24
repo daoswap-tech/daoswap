@@ -9,10 +9,10 @@ import { NEVER_RELOAD, useMultipleContractSingleData } from '../multicall/hooks'
 import { tryParseAmount } from '../swap/hooks'
 
 // TODO:Daoswap 修改开始时间
-export const STAKING_GENESIS = 1605954000
+export const STAKING_GENESIS = 1606186800
 
 // TODO:Daoswap 修改奖励活动天数
-export const REWARDS_DURATION_DAYS = 7
+export const REWARDS_DURATION_DAYS = 1
 
 // TODO add staking rewards addresses here
 export const STAKING_REWARDS_INFO: {

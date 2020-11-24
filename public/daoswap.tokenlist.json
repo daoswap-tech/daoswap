@@ -19,6 +19,22 @@
       "symbol": "NTC",
       "decimals": 18,
       "logoURI": "https://app.daoswap.global/daoswap.svg"
+    },
+    {
+      "chainId": 4,
+      "address": "0x1599A352A39eb03777A1eB508eF80D17743C196D",
+      "name": "Daoswap Test Coin 1",
+      "symbol": "DTC1",
+      "decimals": 18,
+      "logoURI": "https://app.daoswap.global/daoswap.svg"
+    },
+    {
+      "chainId": 4,
+      "address": "0x1599A352A39eb03777A1eB508eF80D17743C196D",
+      "name": "Daoswap Test Coin 2",
+      "symbol": "DTC2",
+      "decimals": 18,
+      "logoURI": "https://app.daoswap.global/daoswap.svg"
     }
   ],
   "version": { "major": 0, "minor": 0, "patch": 0 }
