@@ -30,7 +30,7 @@ export const NTC_RINKEBY = new Token(
 )
 export const DTC1_RINKEBY = new Token(
   ChainId.RINKEBY,
-  '0x1599A352A39eb03777A1eB508eF80D17743C196D',
+  '0xCAd7A229D56245fFaBF2D8D1aCfA8c2D64cFBe2f',
   18,
   'DTC1',
   'Daoswap Test Coin 1'
