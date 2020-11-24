@@ -2,7 +2,7 @@ import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, WETH, Pair } from '@
 import { useMemo } from 'react'
 // TODO:Daoswap 添加代币引用
 // import { DAI, DOI_ROPSTEN, UNI, USDC, USDT, WBTC } from '../../constants'
-import { UNI, NTC_RINKEBY } from '../../constants'
+import { UNI, DTC1_RINKEBY } from '../../constants'
 import { STAKING_REWARDS_INTERFACE } from '../../constants/abis/staking-rewards'
 import { useActiveWeb3React } from '../../hooks'
 import { NEVER_RELOAD, useMultipleContractSingleData } from '../multicall/hooks'
@@ -65,9 +65,13 @@ export const STAKING_REWARDS_INFO: {
     //   tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
     //   stakingRewardAddress: '0xB312fCfC8102f6E7185170bb51f00f96208a7a27'
     // }
+    // {
+    //   tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
+    //   stakingRewardAddress: '0xc5Ab8608696B20332a78435ec6A7CEA089faeF54'
+    // }
     {
-      tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
-      stakingRewardAddress: '0xc5Ab8608696B20332a78435ec6A7CEA089faeF54'
+      tokens: [WETH[ChainId.RINKEBY], DTC1_RINKEBY],
+      stakingRewardAddress: '0xA34cf44A746BB22C2d5D77820487a5Bdc47781C2'
     }
   ]
 }
