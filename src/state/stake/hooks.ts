@@ -9,10 +9,10 @@ import { NEVER_RELOAD, useMultipleContractSingleData } from '../multicall/hooks'
 import { tryParseAmount } from '../swap/hooks'
 
 // TODO:Daoswap 修改开始时间
-export const STAKING_GENESIS = 1606188600
+export const STAKING_GENESIS = 1606227600
 
 // TODO:Daoswap 修改奖励活动天数
-export const REWARDS_DURATION_DAYS = 1
+export const REWARDS_DURATION_DAYS = 4
 
 // TODO add staking rewards addresses here
 export const STAKING_REWARDS_INFO: {
@@ -75,7 +75,7 @@ export const STAKING_REWARDS_INFO: {
     // }
     {
       tokens: [WETH[ChainId.RINKEBY], DTC1_RINKEBY],
-      stakingRewardAddress: '0xbc57eF68Edc32Bb0E04287700CE86AcC882889a4'
+      stakingRewardAddress: '0xA0e39091222E08f06e5f5BA05EcDc2dBe5cBA204'
     }
   ]
 }
