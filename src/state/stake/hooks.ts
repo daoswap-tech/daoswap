@@ -9,10 +9,10 @@ import { NEVER_RELOAD, useMultipleContractSingleData } from '../multicall/hooks'
 import { tryParseAmount } from '../swap/hooks'
 
 // TODO:Daoswap 修改开始时间
-export const STAKING_GENESIS = 1606230600
+export const STAKING_GENESIS = 1606311600
 
 // TODO:Daoswap 修改奖励活动天数
-export const REWARDS_DURATION_DAYS = 4
+export const REWARDS_DURATION_DAYS = 3
 
 // TODO add staking rewards addresses here
 export const STAKING_REWARDS_INFO: {
@@ -41,42 +41,6 @@ export const STAKING_REWARDS_INFO: {
   // ],
   // TODO:Daoswap 配置奖励池
   [ChainId.RINKEBY]: [
-    // {
-    //   tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
-    //   stakingRewardAddress: '0x438812b750dd37d7A709Dd0Ac95e32ABa23cf18e'
-    // },
-    // {
-    //   tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
-    //   stakingRewardAddress: '0xEF8849eb4Bc579ebf5BfCE00A574eEf9833af013'
-    // },
-    // {
-    //   tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
-    //   stakingRewardAddress: '0x079724dd6d6774c36b366ED9Bd2718CF5535A032'
-    // },
-    // {
-    //   tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
-    //   stakingRewardAddress: '0x02d7bE436AE520DAf110602E3BF761dc13412907'
-    // }
-    // {
-    //   tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
-    //   stakingRewardAddress: '0x7B1e4CD1edfd2dA7Beb43A96A1ab615E985c3a83'
-    // }
-    // {
-    //   tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
-    //   stakingRewardAddress: '0xB312fCfC8102f6E7185170bb51f00f96208a7a27'
-    // }
-    // {
-    //   tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
-    //   stakingRewardAddress: '0xc5Ab8608696B20332a78435ec6A7CEA089faeF54'
-    // }
-    // {
-    //   tokens: [WETH[ChainId.RINKEBY], DTC1_RINKEBY],
-    //   stakingRewardAddress: '0xA34cf44A746BB22C2d5D77820487a5Bdc47781C2'
-    // }
-    // { // 差一天
-    //   tokens: [WETH[ChainId.RINKEBY], DTC1_RINKEBY],
-    //   stakingRewardAddress: '0xA0e39091222E08f06e5f5BA05EcDc2dBe5cBA204'
-    // }
     {
       tokens: [WETH[ChainId.RINKEBY], DTC1_RINKEBY],
       stakingRewardAddress: '0x680CC0e39AE9c4B7F2c0E44F55693c0255a6D6A3'
