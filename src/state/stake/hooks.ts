@@ -1,17 +1,16 @@
-import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, Pair } from '@uniswap/sdk'
-// import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, WETH, Pair } from '@uniswap/sdk'
+import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, WETH, Pair } from '@uniswap/sdk'
 import { useMemo } from 'react'
 // TODO:Daoswap 添加代币引用
 // import { DAI, DOI_ROPSTEN, UNI, USDC, USDT, WBTC } from '../../constants'
-// import { UNI, NTC_RINKEBY, DTC1_RINKEBY, DTC2_RINKEBY } from '../../constants'
-import { UNI } from '../../constants'
+import { UNI, NTC_RINKEBY, DTC1_RINKEBY, DTC2_RINKEBY } from '../../constants'
+// import { UNI } from '../../constants'
 import { STAKING_REWARDS_INTERFACE } from '../../constants/abis/staking-rewards'
 import { useActiveWeb3React } from '../../hooks'
 import { NEVER_RELOAD, useMultipleContractSingleData } from '../multicall/hooks'
 import { tryParseAmount } from '../swap/hooks'
 
 // TODO:Daoswap 修改开始时间
-export const STAKING_GENESIS = 1606554300
+export const STAKING_GENESIS = 1606557600
 
 // TODO:Daoswap 修改奖励活动天数
 export const REWARDS_DURATION_DAYS = 1
@@ -56,22 +55,22 @@ export const STAKING_REWARDS_INFO: {
     //   stakingRewardAddress: '0xAF3B86C625C0585f63C5246cc90ECb00c6A98556'
     // }
     // 下面常用池子
-    // {
-    //   tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
-    //   stakingRewardAddress: '0xbE62c1F897d939b908eBC92402294fE8b60b87E9'
-    // },
-    // {
-    //   tokens: [WETH[ChainId.RINKEBY], DTC1_RINKEBY],
-    //   stakingRewardAddress: '0xeFc048425A8F500230737a417442712B37eC5fA0'
-    // },
-    // {
-    //   tokens: [NTC_RINKEBY, DTC1_RINKEBY],
-    //   stakingRewardAddress: '0xa47EbAac22019a6fBe52b71ae127c47AFCB96cfd'
-    // },
-    // {
-    //   tokens: [DTC1_RINKEBY, DTC2_RINKEBY],
-    //   stakingRewardAddress: '0x8E3131F0bC87a7B93cF8Ff5B13D62e2abC7D7264'
-    // }
+    {
+      tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
+      stakingRewardAddress: '0x8a1858e0B41E98c591363FA3D3d7cd114B62F7bb'
+    },
+    {
+      tokens: [WETH[ChainId.RINKEBY], DTC1_RINKEBY],
+      stakingRewardAddress: '0x34f7f0563625e157a273DAb6AE9e5679Cf62F038'
+    },
+    {
+      tokens: [NTC_RINKEBY, DTC1_RINKEBY],
+      stakingRewardAddress: '0xABB18De1e6b538F7bbecF5036821c89Dbf4537D0'
+    },
+    {
+      tokens: [DTC1_RINKEBY, DTC2_RINKEBY],
+      stakingRewardAddress: '0x9B992c98339cc3730bA3458898BbeC58c2C83546'
+    }
   ]
 }
 
