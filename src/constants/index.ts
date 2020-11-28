@@ -35,6 +35,13 @@ export const DTC1_RINKEBY = new Token(
   'DTC1',
   'Daoswap Test Coin 1'
 )
+export const DTC2_RINKEBY = new Token(
+  ChainId.RINKEBY,
+  '0x3032588C9B8aAc3F9C9e495426f0D8dF37eb0344',
+  18,
+  'DTC2',
+  'Daoswap Test Coin 2'
+)
 
 // Block time here is slightly higher (~1s) than average in order to avoid ongoing proposals past the displayed time
 export const AVERAGE_BLOCK_TIME_IN_SECS = 14

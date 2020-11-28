@@ -2,14 +2,14 @@ import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, WETH, Pair } from '@
 import { useMemo } from 'react'
 // TODO:Daoswap 添加代币引用
 // import { DAI, DOI_ROPSTEN, UNI, USDC, USDT, WBTC } from '../../constants'
-import { UNI, DTC1_RINKEBY } from '../../constants'
+import { UNI, NTC_RINKEBY, DTC1_RINKEBY, DTC2_RINKEBY } from '../../constants'
 import { STAKING_REWARDS_INTERFACE } from '../../constants/abis/staking-rewards'
 import { useActiveWeb3React } from '../../hooks'
 import { NEVER_RELOAD, useMultipleContractSingleData } from '../multicall/hooks'
 import { tryParseAmount } from '../swap/hooks'
 
 // TODO:Daoswap 修改开始时间
-export const STAKING_GENESIS = 1606551600
+export const STAKING_GENESIS = 1606554300
 
 // TODO:Daoswap 修改奖励活动天数
 export const REWARDS_DURATION_DAYS = 1
@@ -49,9 +49,25 @@ export const STAKING_REWARDS_INFO: {
     //   tokens: [WETH[ChainId.RINKEBY], DTC1_RINKEBY],
     //   stakingRewardAddress: '0xEd89304EfC6CdDc00b4635041356fAa8497e070C'
     // }
+    // {
+    //   tokens: [WETH[ChainId.RINKEBY], DTC1_RINKEBY],
+    //   stakingRewardAddress: '0xAF3B86C625C0585f63C5246cc90ECb00c6A98556'
+    // }
+    {
+      tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
+      stakingRewardAddress: '0xbE62c1F897d939b908eBC92402294fE8b60b87E9'
+    },
     {
       tokens: [WETH[ChainId.RINKEBY], DTC1_RINKEBY],
-      stakingRewardAddress: '0xAF3B86C625C0585f63C5246cc90ECb00c6A98556'
+      stakingRewardAddress: '0xeFc048425A8F500230737a417442712B37eC5fA0'
+    },
+    {
+      tokens: [NTC_RINKEBY, DTC1_RINKEBY],
+      stakingRewardAddress: '0xa47EbAac22019a6fBe52b71ae127c47AFCB96cfd'
+    },
+    {
+      tokens: [DTC1_RINKEBY, DTC2_RINKEBY],
+      stakingRewardAddress: '0x8E3131F0bC87a7B93cF8Ff5B13D62e2abC7D7264'
     }
   ]
 }
