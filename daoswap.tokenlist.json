@@ -22,7 +22,7 @@
     },
     {
       "chainId": 4,
-      "address": "0x1599A352A39eb03777A1eB508eF80D17743C196D",
+      "address": "0xCAd7A229D56245fFaBF2D8D1aCfA8c2D64cFBe2f",
       "name": "Daoswap Test Coin 1",
       "symbol": "DTC1",
       "decimals": 18,
@@ -30,7 +30,7 @@
     },
     {
       "chainId": 4,
-      "address": "0x1599A352A39eb03777A1eB508eF80D17743C196D",
+      "address": "0x3032588C9B8aAc3F9C9e495426f0D8dF37eb0344",
       "name": "Daoswap Test Coin 2",
       "symbol": "DTC2",
       "decimals": 18,
