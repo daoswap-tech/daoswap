@@ -53,22 +53,23 @@ export const STAKING_REWARDS_INFO: {
     //   tokens: [WETH[ChainId.RINKEBY], DTC1_RINKEBY],
     //   stakingRewardAddress: '0xAF3B86C625C0585f63C5246cc90ECb00c6A98556'
     // }
-    {
-      tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
-      stakingRewardAddress: '0xbE62c1F897d939b908eBC92402294fE8b60b87E9'
-    },
-    {
-      tokens: [WETH[ChainId.RINKEBY], DTC1_RINKEBY],
-      stakingRewardAddress: '0xeFc048425A8F500230737a417442712B37eC5fA0'
-    },
-    {
-      tokens: [NTC_RINKEBY, DTC1_RINKEBY],
-      stakingRewardAddress: '0xa47EbAac22019a6fBe52b71ae127c47AFCB96cfd'
-    },
-    {
-      tokens: [DTC1_RINKEBY, DTC2_RINKEBY],
-      stakingRewardAddress: '0x8E3131F0bC87a7B93cF8Ff5B13D62e2abC7D7264'
-    }
+    // 下面常用池子
+    // {
+    //   tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
+    //   stakingRewardAddress: '0xbE62c1F897d939b908eBC92402294fE8b60b87E9'
+    // },
+    // {
+    //   tokens: [WETH[ChainId.RINKEBY], DTC1_RINKEBY],
+    //   stakingRewardAddress: '0xeFc048425A8F500230737a417442712B37eC5fA0'
+    // },
+    // {
+    //   tokens: [NTC_RINKEBY, DTC1_RINKEBY],
+    //   stakingRewardAddress: '0xa47EbAac22019a6fBe52b71ae127c47AFCB96cfd'
+    // },
+    // {
+    //   tokens: [DTC1_RINKEBY, DTC2_RINKEBY],
+    //   stakingRewardAddress: '0x8E3131F0bC87a7B93cF8Ff5B13D62e2abC7D7264'
+    // }
   ]
 }
 
