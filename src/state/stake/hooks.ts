@@ -1,17 +1,18 @@
-// import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, WETH, Pair } from '@uniswap/sdk'
-import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, Pair } from '@uniswap/sdk'
+import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, WETH, Pair } from '@uniswap/sdk'
+// import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, Pair } from '@uniswap/sdk'
 import { useMemo } from 'react'
 // TODO:Daoswap 添加代币引用
 // import { DAI, DOI_ROPSTEN, UNI, USDC, USDT, WBTC } from '../../constants'
 // import { UNI, NTC_RINKEBY, DTC1_RINKEBY, DTC2_RINKEBY } from '../../constants'
-import { UNI } from '../../constants'
+import { UNI, DTC1_RINKEBY } from '../../constants'
+// import { UNI } from '../../constants'
 import { STAKING_REWARDS_INTERFACE } from '../../constants/abis/staking-rewards'
 import { useActiveWeb3React } from '../../hooks'
 import { NEVER_RELOAD, useMultipleContractSingleData } from '../multicall/hooks'
 import { tryParseAmount } from '../swap/hooks'
 
 // TODO:Daoswap 修改开始时间
-export const STAKING_GENESIS = 1606557600
+export const STAKING_GENESIS = 1607069700
 
 // TODO:Daoswap 修改奖励活动天数
 export const REWARDS_DURATION_DAYS = 1
@@ -72,6 +73,10 @@ export const STAKING_REWARDS_INFO: {
     //   tokens: [DTC1_RINKEBY, DTC2_RINKEBY],
     //   stakingRewardAddress: '0x9B992c98339cc3730bA3458898BbeC58c2C83546'
     // }
+    {
+      tokens: [WETH[ChainId.RINKEBY], DTC1_RINKEBY],
+      stakingRewardAddress: '0x0E5DA7Cba443Ea3989c610194c0ee01F053b0505'
+    }
   ]
 }
 

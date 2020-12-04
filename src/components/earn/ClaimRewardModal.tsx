@@ -23,6 +23,7 @@ interface StakingModalProps {
   stakingInfo: StakingInfo
 }
 
+// TODO:Daoswap UNI -> DOI
 export default function ClaimRewardModal({ isOpen, onDismiss, stakingInfo }: StakingModalProps) {
   const { account } = useActiveWeb3React()
 
@@ -42,7 +43,6 @@ export default function ClaimRewardModal({ isOpen, onDismiss, stakingInfo }: Sta
   async function onClaimReward() {
     if (stakingContract && stakingInfo?.stakedAmount) {
       setAttempting(true)
-      // TODO:Daoswap UNI -> DOI
       await stakingContract
         .getReward({ gasLimit: 350000 })
         .then((response: TransactionResponse) => {
@@ -79,7 +79,6 @@ export default function ClaimRewardModal({ isOpen, onDismiss, stakingInfo }: Sta
               <TYPE.body fontWeight={600} fontSize={36}>
                 {stakingInfo?.earnedAmount?.toSignificant(6)}
               </TYPE.body>
-              {/* // TODO:Daoswap UNI -> DOI */}
               <TYPE.body>Unclaimed DOI</TYPE.body>
             </AutoColumn>
           )}
@@ -94,7 +93,6 @@ export default function ClaimRewardModal({ isOpen, onDismiss, stakingInfo }: Sta
       {attempting && !hash && (
         <LoadingView onDismiss={wrappedOnDismiss}>
           <AutoColumn gap="12px" justify={'center'}>
-            {/* // TODO:Daoswap UNI -> DOI */}
             <TYPE.body fontSize={20}>Claiming {stakingInfo?.earnedAmount?.toSignificant(6)} DOI</TYPE.body>
           </AutoColumn>
         </LoadingView>
@@ -103,7 +101,6 @@ export default function ClaimRewardModal({ isOpen, onDismiss, stakingInfo }: Sta
         <SubmittedView onDismiss={wrappedOnDismiss} hash={hash}>
           <AutoColumn gap="12px" justify={'center'}>
             <TYPE.largeHeader>Transaction Submitted</TYPE.largeHeader>
-            {/* // TODO:Daoswap UNI -> DOI */}
             <TYPE.body fontSize={20}>Claimed DOI!</TYPE.body>
           </AutoColumn>
         </SubmittedView>

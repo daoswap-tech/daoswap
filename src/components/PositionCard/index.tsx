@@ -157,6 +157,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
   )
 }
 
+// TODO: Daoswap hide link
 export default function FullPositionCard({ pair, border }: PositionCardProps) {
   const { account } = useActiveWeb3React()
 
@@ -277,7 +278,7 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
               </Text>
             </FixedHeightRow>
 
-            <ButtonSecondary padding="8px" borderRadius="8px">
+            <ButtonSecondary padding="8px" borderRadius="8px" style={{ display: 'none' }}>
               <ExternalLink
                 style={{ width: '100%', textAlign: 'center' }}
                 href={`https://uniswap.info/account/${account}`}

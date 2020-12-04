@@ -134,7 +134,7 @@ const UNIAmount = styled(AccountElement)`
   height: 36px;
   font-weight: 500;
   background-color: ${({ theme }) => theme.bg3};
-  background: radial-gradient(174.47% 188.91% at 1.84% 0%, #ff007a 0%, #2172e5 100%), #edeef2;
+  background: radial-gradient(174.47% 188.91% at 1.84% 0%, #A43BD4 0%, #121870 100%), #edeef2;
 `
 
 const UNIWrapper = styled.span`
@@ -264,6 +264,7 @@ const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
   [ChainId.KOVAN]: 'Kovan'
 }
 
+// TODO:Daoswap UNI -> DOI
 export default function Header() {
   const { account, chainId } = useActiveWeb3React()
   const { t } = useTranslation()
@@ -315,7 +316,6 @@ export default function Header() {
             {t('pool')}
           </StyledNavLink>
           {/* 注释隐藏 style={{ display: 'none' }} */}
-          {/* // TODO:Daoswap UNI -> DOI */}
           <StyledNavLink id={`stake-nav-link`} to={'/uni'}>
             DOI
           </StyledNavLink>
@@ -341,7 +341,7 @@ export default function Header() {
             <UNIWrapper onClick={toggleClaimModal}>
               <UNIAmount active={!!account && !availableClaim} style={{ pointerEvents: 'auto' }}>
                 <TYPE.white padding="0 2px">
-                  {claimTxn && !claimTxn?.receipt ? <Dots>Claiming UNI</Dots> : 'Claim UNI'}
+                  {claimTxn && !claimTxn?.receipt ? <Dots>Claiming DOI</Dots> : 'Claim DOI'}
                 </TYPE.white>
               </UNIAmount>
               <CardNoise />

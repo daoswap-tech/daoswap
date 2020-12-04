@@ -42,6 +42,7 @@ interface StakingModalProps {
   userLiquidityUnstaked: TokenAmount | undefined
 }
 
+// TODO:Daoswap UNI -> DOI
 export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiquidityUnstaked }: StakingModalProps) {
   const { account, chainId, library } = useActiveWeb3React()
 
@@ -218,7 +219,6 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
               <TYPE.black fontWeight={600}>Weekly Rewards</TYPE.black>
             </div>
 
-            {/* // TODO:Daoswap UNI -> DOI */}
             <TYPE.black>
               {hypotheticalRewardRate.multiply((60 * 60 * 24 * 7).toString()).toSignificant(4, { groupSeparator: ',' })}{' '}
               DOI / week

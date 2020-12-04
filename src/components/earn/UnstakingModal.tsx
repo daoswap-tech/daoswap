@@ -24,6 +24,7 @@ interface StakingModalProps {
   stakingInfo: StakingInfo
 }
 
+// TODO:Daoswap UNI -> DOI
 export default function UnstakingModal({ isOpen, onDismiss, stakingInfo }: StakingModalProps) {
   const { account } = useActiveWeb3React()
 
@@ -87,12 +88,10 @@ export default function UnstakingModal({ isOpen, onDismiss, stakingInfo }: Staki
               <TYPE.body fontWeight={600} fontSize={36}>
                 {<FormattedCurrencyAmount currencyAmount={stakingInfo?.earnedAmount} />}
               </TYPE.body>
-              {/* // TODO:Daoswap UNI -> DOI */}
               <TYPE.body>Unclaimed DOI</TYPE.body>
             </AutoColumn>
           )}
           <TYPE.subHeader style={{ textAlign: 'center' }}>
-            {/* // TODO:Daoswap UNI -> DOI */}
             When you withdraw, your DOI is claimed and your liquidity is removed from the mining pool.
           </TYPE.subHeader>
           <ButtonError disabled={!!error} error={!!error && !!stakingInfo?.stakedAmount} onClick={onWithdraw}>
@@ -104,7 +103,6 @@ export default function UnstakingModal({ isOpen, onDismiss, stakingInfo }: Staki
         <LoadingView onDismiss={wrappedOndismiss}>
           <AutoColumn gap="12px" justify={'center'}>
             <TYPE.body fontSize={20}>Withdrawing {stakingInfo?.stakedAmount?.toSignificant(4)} DLT</TYPE.body>
-            {/* // TODO:Daoswap UNI -> DOI */}
             <TYPE.body fontSize={20}>Claiming {stakingInfo?.earnedAmount?.toSignificant(4)} DOI</TYPE.body>
           </AutoColumn>
         </LoadingView>
@@ -114,7 +112,6 @@ export default function UnstakingModal({ isOpen, onDismiss, stakingInfo }: Staki
           <AutoColumn gap="12px" justify={'center'}>
             <TYPE.largeHeader>Transaction Submitted</TYPE.largeHeader>
             <TYPE.body fontSize={20}>Withdrew DLT!</TYPE.body>
-            {/* // TODO:Daoswap UNI -> DOI */}
             <TYPE.body fontSize={20}>Claimed DOI!</TYPE.body>
           </AutoColumn>
         </SubmittedView>

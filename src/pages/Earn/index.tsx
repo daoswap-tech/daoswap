@@ -29,6 +29,7 @@ const PoolSection = styled.div`
   justify-self: center;
 `
 
+// TODO:Daoswap UNI -> DOI
 export default function Earn() {
   const { chainId } = useActiveWeb3React()
   const stakingInfos = useStakingInfo()
@@ -55,7 +56,6 @@ export default function Earn() {
               </RowBetween>
               <RowBetween>
                 <TYPE.white fontSize={14}>
-                  {/* // TODO:Daoswap UNI -> DOI */}
                   Deposit your Liquidity Provider tokens to receive DOI, the Uniswap protocol governance token.
                 </TYPE.white>
               </RowBetween>{' '}
@@ -65,7 +65,7 @@ export default function Earn() {
                 href="https://uniswap.org/blog/uni/"
                 target="_blank"
               >
-                <TYPE.white fontSize={14}>Read more about UNI</TYPE.white>
+                <TYPE.white fontSize={14}>Read more about DOI</TYPE.white>
               </ExternalLink>
             </AutoColumn>
           </CardSection>

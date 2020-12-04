@@ -72,6 +72,7 @@ const BottomSection = styled.div<{ showBackground: boolean }>`
   z-index: 1;
 `
 
+// TODO:Daoswap UNI -> DOI
 export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) {
   const token0 = stakingInfo.tokens[0]
   const token1 = stakingInfo.tokens[1]
@@ -139,7 +140,6 @@ export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) 
         </RowBetween>
         <RowBetween>
           <TYPE.white> Pool rate </TYPE.white>
-          {/* // TODO:Daoswap UNI -> DOI */}
           <TYPE.white>{`${stakingInfo.totalRewardRate
             ?.multiply(`${60 * 60 * 24 * 7}`)
             ?.toFixed(0, { groupSeparator: ',' })} DOI / week`}</TYPE.white>
@@ -158,7 +158,6 @@ export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) 
               <span role="img" aria-label="wizard-icon" style={{ marginRight: '0.5rem' }}>
                 ⚡
               </span>
-              {/* // TODO:Daoswap UNI -> DOI */}
               {`${stakingInfo.rewardRate
                 ?.multiply(`${60 * 60 * 24 * 7}`)
                 ?.toSignificant(4, { groupSeparator: ',' })} DOI / week`}

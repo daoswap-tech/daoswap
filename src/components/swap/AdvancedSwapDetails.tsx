@@ -104,7 +104,7 @@ export function AdvancedSwapDetails({ trade }: AdvancedSwapDetailsProps) {
               </AutoColumn>
             </>
           )}
-          <AutoColumn style={{ padding: '0 24px' }}>
+          <AutoColumn style={{ padding: '0 24px', display: 'none' }}>
             <InfoLink href={'https://uniswap.info/pair/' + trade.route.pairs[0].liquidityToken.address} target="_blank">
               View pair analytics ↗
             </InfoLink>

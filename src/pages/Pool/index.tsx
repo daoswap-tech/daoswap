@@ -126,7 +126,7 @@ export default function Pool() {
                 </TYPE.white>
               </RowBetween>
               <ExternalLink
-                style={{ color: 'white', textDecoration: 'underline' }}
+                style={{ color: 'white', textDecoration: 'underline', display: 'none' }}
                 target="_blank"
                 href="https://uniswap.org/docs/v2/core-concepts/pools/"
               >

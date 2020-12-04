@@ -26,7 +26,7 @@ const ContentWrapper = styled(AutoColumn)`
 
 const ModalUpper = styled(DataCard)`
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #ff007a 0%, #021d43 100%);
+  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #A43BD4 0%, #021d43 100%);
 `
 
 const ConfirmOrLoadingWrapper = styled.div<{ activeBG: boolean }>`
@@ -42,6 +42,7 @@ const ConfirmedIcon = styled(ColumnCenter)`
   padding: 60px 0;
 `
 
+// TODO:Daoswap UNI -> DOI
 export default function AddressClaimModal({ isOpen, onDismiss }: { isOpen: boolean; onDismiss: () => void }) {
   const { chainId } = useActiveWeb3React()
 
@@ -102,18 +103,18 @@ export default function AddressClaimModal({ isOpen, onDismiss }: { isOpen: boole
             <CardNoise />
             <CardSection gap="md">
               <RowBetween>
-                <TYPE.white fontWeight={500}>Claim UNI Token</TYPE.white>
+                <TYPE.white fontWeight={500}>Claim DOI Token</TYPE.white>
                 <CloseIcon onClick={wrappedOnDismiss} style={{ zIndex: 99 }} stroke="white" />
               </RowBetween>
               <TYPE.white fontWeight={700} fontSize={36}>
-                {unclaimedAmount?.toFixed(0, { groupSeparator: ',' } ?? '-')} UNI
+                {unclaimedAmount?.toFixed(0, { groupSeparator: ',' } ?? '-')} DOI
               </TYPE.white>
             </CardSection>
             <Break />
           </ModalUpper>
           <AutoColumn gap="md" style={{ padding: '1rem', paddingTop: '0' }} justify="center">
             <TYPE.subHeader fontWeight={500}>
-              Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on
+              Enter an address to trigger a DOI claim. If the address has any claimable DOI it will be sent to them on
               submission.
             </TYPE.subHeader>
             <AddressInputPanel value={typed} onChange={handleRecipientType} />
@@ -128,7 +129,7 @@ export default function AddressClaimModal({ isOpen, onDismiss }: { isOpen: boole
               mt="1rem"
               onClick={onClaim}
             >
-              Claim UNI
+              Claim DOI
             </ButtonPrimary>
           </AutoColumn>
         </ContentWrapper>
@@ -154,8 +155,8 @@ export default function AddressClaimModal({ isOpen, onDismiss }: { isOpen: boole
                 {claimConfirmed ? 'Claimed' : 'Claiming'}
               </TYPE.largeHeader>
               {!claimConfirmed && (
-                <Text fontSize={36} color={'#ff007a'} fontWeight={800}>
-                  {unclaimedAmount?.toFixed(0, { groupSeparator: ',' } ?? '-')} UNI
+                <Text fontSize={36} color={'#A43BD4'} fontWeight={800}>
+                  {unclaimedAmount?.toFixed(0, { groupSeparator: ',' } ?? '-')} DOI
                 </Text>
               )}
               {parsedAddress && (
