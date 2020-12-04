@@ -1,9 +1,10 @@
-import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, WETH, Pair } from '@uniswap/sdk'
+// import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, WETH, Pair } from '@uniswap/sdk'
+import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, Pair } from '@uniswap/sdk'
 import { useMemo } from 'react'
 // TODO:Daoswap 添加代币引用
 // import { DAI, DOI_ROPSTEN, UNI, USDC, USDT, WBTC } from '../../constants'
-import { UNI, NTC_RINKEBY, DTC1_RINKEBY, DTC2_RINKEBY } from '../../constants'
-// import { UNI } from '../../constants'
+// import { UNI, NTC_RINKEBY, DTC1_RINKEBY, DTC2_RINKEBY } from '../../constants'
+import { UNI } from '../../constants'
 import { STAKING_REWARDS_INTERFACE } from '../../constants/abis/staking-rewards'
 import { useActiveWeb3React } from '../../hooks'
 import { NEVER_RELOAD, useMultipleContractSingleData } from '../multicall/hooks'
@@ -55,22 +56,22 @@ export const STAKING_REWARDS_INFO: {
     //   stakingRewardAddress: '0xAF3B86C625C0585f63C5246cc90ECb00c6A98556'
     // }
     // 下面常用池子
-    {
-      tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
-      stakingRewardAddress: '0x8a1858e0B41E98c591363FA3D3d7cd114B62F7bb'
-    },
-    {
-      tokens: [WETH[ChainId.RINKEBY], DTC1_RINKEBY],
-      stakingRewardAddress: '0x34f7f0563625e157a273DAb6AE9e5679Cf62F038'
-    },
-    {
-      tokens: [NTC_RINKEBY, DTC1_RINKEBY],
-      stakingRewardAddress: '0xABB18De1e6b538F7bbecF5036821c89Dbf4537D0'
-    },
-    {
-      tokens: [DTC1_RINKEBY, DTC2_RINKEBY],
-      stakingRewardAddress: '0x9B992c98339cc3730bA3458898BbeC58c2C83546'
-    }
+    // {
+    //   tokens: [WETH[ChainId.RINKEBY], NTC_RINKEBY],
+    //   stakingRewardAddress: '0x8a1858e0B41E98c591363FA3D3d7cd114B62F7bb'
+    // },
+    // {
+    //   tokens: [WETH[ChainId.RINKEBY], DTC1_RINKEBY],
+    //   stakingRewardAddress: '0x34f7f0563625e157a273DAb6AE9e5679Cf62F038'
+    // },
+    // {
+    //   tokens: [NTC_RINKEBY, DTC1_RINKEBY],
+    //   stakingRewardAddress: '0xABB18De1e6b538F7bbecF5036821c89Dbf4537D0'
+    // },
+    // {
+    //   tokens: [DTC1_RINKEBY, DTC2_RINKEBY],
+    //   stakingRewardAddress: '0x9B992c98339cc3730bA3458898BbeC58c2C83546'
+    // }
   ]
 }
 
