@@ -1,10 +1,10 @@
-import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, WETH, Pair } from '@uniswap/sdk'
-// import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, Pair } from '@uniswap/sdk'
+// import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, WETH, Pair } from '@uniswap/sdk'
+import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, Pair } from '@uniswap/sdk'
 import { useMemo } from 'react'
 // TODO:Daoswap ERC20
 // import { DAI, DOI_ROPSTEN, UNI, USDC, USDT, WBTC } from '../../constants'
 // import { UNI, NTC_RINKEBY, DTC1_RINKEBY, DTC2_RINKEBY } from '../../constants'
-import { UNI, DTC1_RINKEBY } from '../../constants'
+import { UNI } from '../../constants'
 // import { UNI } from '../../constants'
 import { STAKING_REWARDS_INTERFACE } from '../../constants/abis/staking-rewards'
 import { useActiveWeb3React } from '../../hooks'
@@ -73,10 +73,10 @@ export const STAKING_REWARDS_INFO: {
     //   tokens: [DTC1_RINKEBY, DTC2_RINKEBY],
     //   stakingRewardAddress: '0x9B992c98339cc3730bA3458898BbeC58c2C83546'
     // }
-    {
-      tokens: [WETH[ChainId.RINKEBY], DTC1_RINKEBY],
-      stakingRewardAddress: '0x0E5DA7Cba443Ea3989c610194c0ee01F053b0505'
-    }
+    // {
+    //   tokens: [WETH[ChainId.RINKEBY], DTC1_RINKEBY],
+    //   stakingRewardAddress: '0x0E5DA7Cba443Ea3989c610194c0ee01F053b0505'
+    // }
   ]
 }
 
