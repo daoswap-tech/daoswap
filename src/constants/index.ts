@@ -3,7 +3,7 @@ import { AbstractConnector } from '@web3-react/abstract-connector'
 
 import { fortmatic, injected, portis, walletconnect, walletlink } from '../connectors'
 
-export const ROUTER_ADDRESS = '0x921DA610Ae4ED9957C1ed1A7FbbF474B7eD77993'
+export const ROUTER_ADDRESS = '0xe4C9bbEf163bcc9DE89F2FDfFBC5ea3CFE45d6F1'
 
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
 
@@ -21,7 +21,7 @@ export const AMPL = new Token(ChainId.MAINNET, '0xD46bA6D942050d489DBd938a2C909A
 export const WBTC = new Token(ChainId.MAINNET, '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599', 18, 'WBTC', 'Wrapped BTC')
 
 // TODO:Daoswap UNI -> DOI
-// TODO:Daoswap 添加 Rinkeby 链上的代币信息
+// TODO:Daoswap Add Rinkeby ERC20
 export const NTC_RINKEBY = new Token(
   ChainId.RINKEBY,
   '0x1599A352A39eb03777A1eB508eF80D17743C196D',
@@ -53,7 +53,7 @@ export const GOVERNANCE_ADDRESS = '0x5e4be8Bc9637f0EAA1A755019e06A68ce081D58F'
 
 export const TIMELOCK_ADDRESS = '0x1a9C8182C09F50C8318d769245beA52c32BE35BC'
 
-const UNI_ADDRESS = '0x29Ac4ed3Ad8457B6Fb75B336D688C9094AD08B4b'
+const UNI_ADDRESS = '0x7Ef5ac1FE8B6832EbAddEE1856E4A21E46843565'
 export const UNI: { [chainId in ChainId]: Token } = {
   [ChainId.MAINNET]: new Token(ChainId.MAINNET, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
   // TODO:Daoswap 代替UNI的代币信息
