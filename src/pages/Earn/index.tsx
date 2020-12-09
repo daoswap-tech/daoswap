@@ -59,7 +59,7 @@ export default function Earn() {
                   Deposit your Liquidity Provider tokens to receive DOI, the Uniswap protocol governance token.
                 </TYPE.white>
               </RowBetween>{' '}
-              {/* 注释隐藏 */}
+              {/* TODO:Daoswap Display Comments */}
               <ExternalLink
                 style={{ color: 'white', textDecoration: 'underline', display: 'none' }}
                 href="https://uniswap.org/blog/uni/"

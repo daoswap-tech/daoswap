@@ -119,7 +119,7 @@ export default function UniBalanceContent({ setShowUniBalanceModal }: { setShowU
               <TYPE.white color="white">{totalSupply?.toFixed(0, { groupSeparator: ',' })}</TYPE.white>
             </RowBetween>
             {uni && uni.chainId === ChainId.MAINNET ? (
-              <ExternalLink href={`https://uniswap.info/token/${uni.address}`}>View DOI Analytics</ExternalLink>
+              <ExternalLink href={`https://info.daoswap.global/token/${uni.address}`}>View DOI Analytics</ExternalLink>
             ) : null}
           </AutoColumn>
         </CardSection>

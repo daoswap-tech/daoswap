@@ -315,16 +315,16 @@ export default function Header() {
           >
             {t('pool')}
           </StyledNavLink>
-          {/* 注释隐藏 style={{ display: 'none' }} */}
-          <StyledNavLink id={`stake-nav-link`} to={'/uni'}>
+          {/* TODO:Daoswap Display Comments style={{ display: 'none' }} */}
+          <StyledNavLink id={`stake-nav-link`} to={'/doi'}>
             DOI
           </StyledNavLink>
-          {/* 注释隐藏 */}
+          {/* TODO:Daoswap Display Comments */}
           <StyledNavLink id={`stake-nav-link`} to={'/vote'} style={{ display: 'none' }}>
             Vote
           </StyledNavLink>
-          {/* 注释隐藏 */}
-          <StyledExternalLink id={`stake-nav-link`} href={'https://uniswap.info'} style={{ display: 'none' }}>
+          {/* TODO:Daoswap Display Comments */}
+          <StyledExternalLink id={`stake-nav-link`} href={'https://info.daoswap.global'}>
             Charts <span style={{ fontSize: '11px' }}>↗</span>
           </StyledExternalLink>
         </HeaderLinks>
@@ -337,7 +337,7 @@ export default function Header() {
             )}
           </HideSmall>
           {availableClaim && !showClaimPopup && (
-            // 注释隐藏 style={{ display: 'none' }}
+            // TODO:Daoswap Display Comments style={{ display: 'none' }}
             <UNIWrapper onClick={toggleClaimModal}>
               <UNIAmount active={!!account && !availableClaim} style={{ pointerEvents: 'auto' }}>
                 <TYPE.white padding="0 2px">
@@ -348,7 +348,7 @@ export default function Header() {
             </UNIWrapper>
           )}
           {!availableClaim && aggregateBalance && (
-            // 注释隐藏 style={{ display: 'none' }}
+            // TODO:Daoswap Display Comments style={{ display: 'none' }}
             <UNIWrapper onClick={() => setShowUniBalanceModal(true)}>
               <UNIAmount active={!!account && !availableClaim} style={{ pointerEvents: 'auto' }}>
                 {account && (

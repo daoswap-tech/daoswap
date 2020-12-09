@@ -1,7 +1,7 @@
 import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, WETH, Pair } from '@uniswap/sdk'
 // import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, Pair } from '@uniswap/sdk'
 import { useMemo } from 'react'
-// TODO:Daoswap 添加代币引用
+// TODO:Daoswap ERC20
 // import { DAI, DOI_ROPSTEN, UNI, USDC, USDT, WBTC } from '../../constants'
 // import { UNI, NTC_RINKEBY, DTC1_RINKEBY, DTC2_RINKEBY } from '../../constants'
 import { UNI, DTC1_RINKEBY } from '../../constants'
@@ -11,10 +11,10 @@ import { useActiveWeb3React } from '../../hooks'
 import { NEVER_RELOAD, useMultipleContractSingleData } from '../multicall/hooks'
 import { tryParseAmount } from '../swap/hooks'
 
-// TODO:Daoswap 修改开始时间
+// TODO:Daoswap Start Time
 export const STAKING_GENESIS = 1607069700
 
-// TODO:Daoswap 修改奖励活动天数
+// TODO:Daoswap Rewards Duration : unit - day
 export const REWARDS_DURATION_DAYS = 1
 
 // TODO add staking rewards addresses here

@@ -99,7 +99,7 @@ export default function Menu() {
 
   return (
     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/30451
-    // 注释隐藏
+    // TODO:Daoswap Display Comments
     <StyledMenu ref={node as any} style={{ display: 'none' }}>
       <StyledMenuButton onClick={toggle}>
         <StyledMenuIcon />
@@ -123,7 +123,7 @@ export default function Menu() {
             <MessageCircle size={14} />
             Discord
           </MenuItem>
-          <MenuItem id="link" href="https://uniswap.info/">
+          <MenuItem id="link" href="https://info.daoswap.global/">
             <PieChart size={14} />
             Analytics
           </MenuItem>
