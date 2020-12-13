@@ -2,13 +2,13 @@ import React, { useRef } from 'react'
 import { BookOpen, Code, Info, MessageCircle, PieChart } from 'react-feather'
 import styled from 'styled-components'
 import { ReactComponent as MenuIcon } from '../../assets/images/menu.svg'
-import { useActiveWeb3React } from '../../hooks'
+// import { useActiveWeb3React } from '../../hooks'
 import { useOnClickOutside } from '../../hooks/useOnClickOutside'
 import { ApplicationModal } from '../../state/application/actions'
 import { useModalOpen, useToggleModal } from '../../state/application/hooks'
 
 import { ExternalLink } from '../../theme'
-import { ButtonPrimary } from '../Button'
+// import { ButtonPrimary } from '../Button'
 
 const StyledMenuIcon = styled(MenuIcon)`
   path {
@@ -85,33 +85,33 @@ const MenuItem = styled(ExternalLink)`
   }
 `
 
-const CODE_LINK = 'https://github.com/Uniswap/uniswap-interface'
+const CODE_LINK = 'https://github.com/daoswap-tech/daoswap'
 
 // TODO:Daoswap UNI -> DOI
 export default function Menu() {
-  const { account } = useActiveWeb3React()
+  // const { account } = useActiveWeb3React()
 
   const node = useRef<HTMLDivElement>()
   const open = useModalOpen(ApplicationModal.MENU)
   const toggle = useToggleModal(ApplicationModal.MENU)
   useOnClickOutside(node, open ? toggle : undefined)
-  const openClaimModal = useToggleModal(ApplicationModal.ADDRESS_CLAIM)
+  // const openClaimModal = useToggleModal(ApplicationModal.ADDRESS_CLAIM)
 
   return (
     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/30451
     // TODO:Daoswap Display Comments
-    <StyledMenu ref={node as any} style={{ display: 'none' }}>
+    <StyledMenu ref={node as any}>
       <StyledMenuButton onClick={toggle}>
         <StyledMenuIcon />
       </StyledMenuButton>
 
       {open && (
         <MenuFlyout>
-          <MenuItem id="link" href="https://uniswap.org/">
+          <MenuItem id="link" href="https://www.daoswap.global/">
             <Info size={14} />
-            About
+            Daoswap
           </MenuItem>
-          <MenuItem id="link" href="https://uniswap.org/docs/v2">
+          <MenuItem id="link" href="https://www.daoswap.global/whitepaper.pdf">
             <BookOpen size={14} />
             Docs
           </MenuItem>
@@ -119,19 +119,19 @@ export default function Menu() {
             <Code size={14} />
             Code
           </MenuItem>
-          <MenuItem id="link" href="https://discord.gg/EwFs3Pp">
+          <MenuItem id="link" href="https://twitter.com/SwapDao">
             <MessageCircle size={14} />
-            Discord
+            Twitter
           </MenuItem>
           <MenuItem id="link" href="https://info.daoswap.global/">
             <PieChart size={14} />
             Analytics
           </MenuItem>
-          {account && (
+          {/* {account && (
             <ButtonPrimary onClick={openClaimModal} padding="8px 16px" width="100%" borderRadius="12px" mt="0.5rem">
               Claim DOI
             </ButtonPrimary>
-          )}
+          )} */}
         </MenuFlyout>
       )}
     </StyledMenu>
