@@ -1,10 +1,9 @@
-// import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, WETH, Pair } from '@uniswap/sdk'
-import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, Pair } from '@uniswap/sdk'
+import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, WETH, Pair } from '@uniswap/sdk'
+// import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, Pair } from '@uniswap/sdk'
 import { useMemo } from 'react'
 // TODO:Daoswap ERC20
 // import { DAI, DOI_ROPSTEN, UNI, USDC, USDT, WBTC } from '../../constants'
-// import { UNI, NTC_RINKEBY, DTC1_RINKEBY, DTC2_RINKEBY } from '../../constants'
-import { UNI } from '../../constants'
+import { UNI, USDT } from '../../constants'
 // import { UNI } from '../../constants'
 import { STAKING_REWARDS_INTERFACE } from '../../constants/abis/staking-rewards'
 import { useActiveWeb3React } from '../../hooks'
@@ -12,7 +11,7 @@ import { NEVER_RELOAD, useMultipleContractSingleData } from '../multicall/hooks'
 import { tryParseAmount } from '../swap/hooks'
 
 // TODO:Daoswap Start Time
-export const STAKING_GENESIS = 1607607000
+export const STAKING_GENESIS = 1608271800
 
 // TODO:Daoswap Rewards Duration : unit - day
 export const REWARDS_DURATION_DAYS = 1
@@ -33,10 +32,10 @@ export const STAKING_REWARDS_INFO: {
     //   tokens: [WETH[ChainId.MAINNET], USDC],
     //   stakingRewardAddress: '0x7FBa4B8Dc5E7616e59622806932DBea72537A56b'
     // },
-    // {
-    //   tokens: [WETH[ChainId.MAINNET], USDT],
-    //   stakingRewardAddress: '0xbD86807188e9A87CE2436dA18c2B396290eFDc2c'
-    // }
+    {
+      tokens: [WETH[ChainId.MAINNET], USDT],
+      stakingRewardAddress: '0xC2834799684601D119c91CE7a65a3aCDE8B69b41'
+    }
     // {
     //   tokens: [WETH[ChainId.MAINNET], WBTC],
     //   stakingRewardAddress: '0xCA35e32e7926b96A9988f61d510E038108d8068e'
