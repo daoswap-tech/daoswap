@@ -11,10 +11,10 @@ import { NEVER_RELOAD, useMultipleContractSingleData } from '../multicall/hooks'
 import { tryParseAmount } from '../swap/hooks'
 
 // TODO:Daoswap Start Time
-export const STAKING_GENESIS = 1608271800
+export const STAKING_GENESIS = 1608606000
 
 // TODO:Daoswap Rewards Duration : unit - day
-export const REWARDS_DURATION_DAYS = 1
+export const REWARDS_DURATION_DAYS = 14
 
 // TODO add staking rewards addresses here
 export const STAKING_REWARDS_INFO: {
@@ -34,7 +34,8 @@ export const STAKING_REWARDS_INFO: {
     // },
     {
       tokens: [WETH[ChainId.MAINNET], USDT],
-      stakingRewardAddress: '0xC2834799684601D119c91CE7a65a3aCDE8B69b41'
+      stakingRewardAddress: '0xBB0B1f9f11C2502961C265C91Bd0840A7bbF33Fe'
+      // stakingRewardAddress: '0xC2834799684601D119c91CE7a65a3aCDE8B69b41'
     }
     // {
     //   tokens: [WETH[ChainId.MAINNET], WBTC],
