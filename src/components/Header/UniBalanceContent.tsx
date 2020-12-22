@@ -12,7 +12,7 @@ import { useTotalUniEarned } from '../../state/stake/hooks'
 import { useAggregateUniBalance, useTokenBalance } from '../../state/wallet/hooks'
 import { ExternalLink, TYPE, UniTokenAnimated } from '../../theme'
 // import { ExternalLink, StyledInternalLink, TYPE, UniTokenAnimated } from '../../theme'
-import { computeUniCirculation } from '../../utils/computeUniCirculation'
+// import { computeUniCirculation } from '../../utils/computeUniCirculation'
 import useUSDCPrice from '../../utils/useUSDCPrice'
 import { AutoColumn } from '../Column'
 import { RowBetween } from '../Row'
@@ -52,15 +52,15 @@ export default function UniBalanceContent({ setShowUniBalanceModal }: { setShowU
 
   const totalSupply: TokenAmount | undefined = useTotalSupply(uni)
   const uniPrice = useUSDCPrice(uni)
-  const blockTimestamp = useCurrentBlockTimestamp()
-  const unclaimedUni = useTokenBalance(useMerkleDistributorContract()?.address, uni)
-  const circulation: TokenAmount | undefined = useMemo(
-    () =>
-      blockTimestamp && uni && chainId === ChainId.MAINNET
-        ? computeUniCirculation(uni, blockTimestamp, unclaimedUni)
-        : totalSupply,
-    [blockTimestamp, chainId, totalSupply, unclaimedUni, uni]
-  )
+  // const blockTimestamp = useCurrentBlockTimestamp()
+  // const unclaimedUni = useTokenBalance(useMerkleDistributorContract()?.address, uni)
+  // const circulation: TokenAmount | undefined = useMemo(
+  //   () =>
+  //     blockTimestamp && uni && chainId === ChainId.MAINNET
+  //       ? computeUniCirculation(uni, blockTimestamp, unclaimedUni)
+  //       : totalSupply,
+  //   [blockTimestamp, chainId, totalSupply, unclaimedUni, uni]
+  // )
 
   return (
     <ContentWrapper gap="lg">
@@ -110,10 +110,10 @@ export default function UniBalanceContent({ setShowUniBalanceModal }: { setShowU
               <TYPE.white color="white">DOI price:</TYPE.white>
               <TYPE.white color="white">${uniPrice?.toFixed(2) ?? '-'}</TYPE.white>
             </RowBetween>
-            <RowBetween>
+            {/* <RowBetween>
               <TYPE.white color="white">DOI in circulation:</TYPE.white>
               <TYPE.white color="white">{circulation?.toFixed(0, { groupSeparator: ',' })}</TYPE.white>
-            </RowBetween>
+            </RowBetween> */}
             <RowBetween>
               <TYPE.white color="white">Total Supply</TYPE.white>
               <TYPE.white color="white">{totalSupply?.toFixed(0, { groupSeparator: ',' })}</TYPE.white>
