@@ -2,14 +2,15 @@
   "name": "Daoswap",
   "logoURI": "https://app.daoswap.global/daoswap.svg",
   "keywords": ["defi", "doi"],
-  "timestamp": "2020-12-09T18:10:34.305Z",
+  "timestamp": "2020-12-22T20:19:56.305Z",
   "tokens": [
-    {"chainId":1,
+    {
+      "chainId":1,
       "address":"0x6b175474e89094c44da98b954eedeac495271d0f",
       "name":"Dai",
       "symbol":"DAI",
       "decimals":18,
-      "logoURI":"https://assets.coingecko.com/coins/images/9956/thumb/dai-multi-collateral-mcd.png?1574218774"
+      "logoURI":"https://www.daoswap.global/images/token-logo/0x6B175474E89094C44Da98b954EedeAC495271d0F/thumb.png"
     },
     {
       "chainId":1,
@@ -17,22 +18,14 @@
       "name":"Tether",
       "symbol":"USDT",
       "decimals":6,
-      "logoURI":"https://assets.coingecko.com/coins/images/325/thumb/Tether-logo.png?1598003707"
+      "logoURI":"https://www.daoswap.global/images/token-logo/0xdAC17F958D2ee523a2206206994597C13D831ec7/thumb.png"
     },
     {"chainId":1,
       "address":"0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
       "name":"USD Coin",
       "symbol":"USDC",
       "decimals":6,
-      "logoURI":"https://assets.coingecko.com/coins/images/6319/thumb/USD_Coin_icon.png?1547042389"
-    },
-    {
-      "chainId": 1,
-      "address": "0x7Ef5ac1FE8B6832EbAddEE1856E4A21E46843565",
-      "name": "Daoswap",
-      "symbol": "DOI",
-      "decimals": 18,
-      "logoURI": "https://app.daoswap.global/daoswap.svg"
+      "logoURI":"https://www.daoswap.global/images/token-logo/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/thumb.png"
     }
   ],
   "version": { "major": 0, "minor": 0, "patch": 0 }
