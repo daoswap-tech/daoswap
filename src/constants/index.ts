@@ -143,14 +143,6 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
     color: '#010101',
     primary: true
   },
-  METAMASK: {
-    connector: injected,
-    name: 'MetaMask',
-    iconName: 'metamask.png',
-    description: 'Easy-to-use browser extension.',
-    href: null,
-    color: '#E8831D'
-  },
   WALLET_CONNECT: {
     connector: walletconnect,
     name: 'WalletConnect',
@@ -159,6 +151,23 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
     href: null,
     color: '#4196FC',
     mobile: true
+  },
+  IMTOKEN_CONNECT: {
+    connector: walletconnect,
+    name: 'imToken',
+    iconName: 'imToken-logo-app.png',
+    description: 'Digital assets under your control.',
+    href: null,
+    color: '#381D83',
+    mobile: true
+  },
+  METAMASK: {
+    connector: injected,
+    name: 'MetaMask',
+    iconName: 'metamask.png',
+    description: 'Easy-to-use browser extension.',
+    href: null,
+    color: '#E8831D'
   },
   WALLET_LINK: {
     connector: walletlink,
