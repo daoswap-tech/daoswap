@@ -1,6 +1,6 @@
 import { Currency, ETHER, Token } from '@uniswap/sdk'
 import React, { KeyboardEvent, RefObject, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
-import ReactGA from 'react-ga'
+// import ReactGA from 'react-ga'
 import { useTranslation } from 'react-i18next'
 import { FixedSizeList } from 'react-window'
 import { Text } from 'rebass'
@@ -56,13 +56,13 @@ export function CurrencySearch({
   const searchToken = useToken(searchQuery)
 
   useEffect(() => {
-    if (isAddressSearch) {
-      ReactGA.event({
-        category: 'Currency Select',
-        action: 'Search by address',
-        label: isAddressSearch
-      })
-    }
+    // if (isAddressSearch) {
+    //   ReactGA.event({
+    //     category: 'Currency Select',
+    //     action: 'Search by address',
+    //     label: isAddressSearch
+    //   })
+    // }
   }, [isAddressSearch])
 
   const showETH: boolean = useMemo(() => {
