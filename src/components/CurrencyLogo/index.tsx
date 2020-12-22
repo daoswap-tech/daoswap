@@ -9,7 +9,7 @@ import Logo from '../Logo'
 
 // `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/${address}/logo.png`
 const getTokenLogoURL = (address: string) =>
-  `https://www.daoswap.global/token-logo/${address}/logo.png`
+  `https://www.daoswap.global/images/token-logo/${address}/logo.png`
 
 const StyledEthereumLogo = styled.img<{ size: string }>`
   width: ${({ size }) => size};

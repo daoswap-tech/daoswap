@@ -10,7 +10,7 @@ async function getColorFromToken(token: Token): Promise<string | null> {
   }
 
   // const path = `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/${token.address}/logo.png`
-  const path = `https://www.daoswap.global/token-logo/${token.address}/logo.png`
+  const path = `https://www.daoswap.global/images/token-logo/${token.address}/logo.png`
 
   return Vibrant.from(path)
     .getPalette()
