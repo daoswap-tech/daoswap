@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c7f8e57725626073f7065a9109c14383",
+    "revision": "768b0d2f5b72feba5f26f52cbb3f4c6b",
     "url": "./index.html"
   },
   {
@@ -52,8 +52,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/js/9.100f178f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "62681df71a24eab9a31c",
-    "url": "./static/js/main.52297121.chunk.js"
+    "revision": "ccc848addfadaa1bd955",
+    "url": "./static/js/main.b0c7f775.chunk.js"
   },
   {
     "revision": "330393083e21600c4a47",
@@ -232,8 +232,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/arrow-right.e96d8158.svg"
   },
   {
-    "revision": "cc9aeda42e09c3ac3e404014d6f87efa",
-    "url": "./static/media/big_unicorn.cc9aeda4.png"
+    "revision": "af5fe3036081760f1e371c74d261e76b",
+    "url": "./static/media/big_unicorn.af5fe303.png"
   },
   {
     "revision": "e62a99c33b7eafddf701893750cedeb9",
@@ -264,8 +264,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/dropup-blue.345dad74.svg"
   },
   {
-    "revision": "35219b53fe22833a1bbd8242fe5a2d6b",
-    "url": "./static/media/imToken-logo-app.35219b53.png"
+    "revision": "86a987c18df865212261f650b33bb44b",
+    "url": "./static/media/imToken-logo-app.86a987c1.png"
   },
   {
     "revision": "50c67f3cdd04281013ef95e92fc7244e",
@@ -288,12 +288,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/menu.981ecca4.svg"
   },
   {
-    "revision": "023762b6aec2a2249b8fdfb638f00ef3",
-    "url": "./static/media/metamask.023762b6.png"
+    "revision": "7195f2eb606ef031486e7e2a91653b6e",
+    "url": "./static/media/metamask.7195f2eb.png"
   },
   {
-    "revision": "17ab2292f09e7d21aa126b0d0cd2f154",
-    "url": "./static/media/noise.17ab2292.png"
+    "revision": "5a61e43495c20b3ba522f925997b796a",
+    "url": "./static/media/noise.5a61e434.png"
   },
   {
     "revision": "899a4aa9bf85aba699112cc7cab6578e",
@@ -320,10 +320,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/spinner.a9842492.svg"
   },
   {
-    "revision": "edcc1ab5dde5cb3d5cf134c4aade641b",
-    "url": "./static/media/trustWallet.edcc1ab5.png"
-  },
-  {
     "revision": "5e81cac236fd057cb686399a8fa2ea57",
     "url": "./static/media/walletConnectIcon.5e81cac2.svg"
   },
@@ -332,7 +328,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/x.5b8e2186.svg"
   },
   {
-    "revision": "ed12c533a5ef9f38e658b16829dff781",
-    "url": "./static/media/xl_uni.ed12c533.png"
+    "revision": "ebe0739889fa573e6d016ad623e36e0c",
+    "url": "./static/media/xl_uni.ebe07398.png"
   }
 ]);
