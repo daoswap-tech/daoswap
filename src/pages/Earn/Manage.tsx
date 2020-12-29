@@ -252,10 +252,11 @@ export default function Manage({
                   <TYPE.white fontSize={36} fontWeight={600}>
                     {stakingInfo?.stakedAmount?.toSignificant(6) ?? '-'}
                   </TYPE.white>
+                  <TYPE.white>DLT</TYPE.white>
                 </RowBetween>
                 <RowBetween style={{ alignItems: 'baseline' }}>
                   <TYPE.white>
-                    DLT {currencyA?.symbol}-{currencyB?.symbol}
+                    {currencyA?.symbol}-{currencyB?.symbol}
                   </TYPE.white>
                 </RowBetween>
               </AutoColumn>
