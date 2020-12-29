@@ -252,6 +252,8 @@ export default function Manage({
                   <TYPE.white fontSize={36} fontWeight={600}>
                     {stakingInfo?.stakedAmount?.toSignificant(6) ?? '-'}
                   </TYPE.white>
+                </RowBetween>
+                <RowBetween style={{ alignItems: 'baseline' }}>
                   <TYPE.white>
                     DLT {currencyA?.symbol}-{currencyB?.symbol}
                   </TYPE.white>
@@ -291,6 +293,8 @@ export default function Manage({
                     duration={1}
                   />
                 </TYPE.largeHeader>
+              </RowBetween>
+              <RowBetween style={{ alignItems: 'baseline' }}>
                 <TYPE.black fontSize={16} fontWeight={500}>
                   <span role="img" aria-label="wizard-icon" style={{ marginRight: '8px ' }}>
                     ⚡
