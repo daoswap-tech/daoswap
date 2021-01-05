@@ -134,7 +134,7 @@ const UNIAmount = styled(AccountElement)`
   height: 36px;
   font-weight: 500;
   background-color: ${({ theme }) => theme.bg3};
-  background: radial-gradient(174.47% 188.91% at 1.84% 0%, #A43BD4 0%, #121870 100%), #edeef2;
+  background: radial-gradient(174.47% 188.91% at 1.84% 0%, #a43bd4 0%, #121870 100%), #edeef2;
 `
 
 const UNIWrapper = styled.span`
@@ -325,7 +325,7 @@ export default function Header() {
           </StyledNavLink>
           {/* TODO:Daoswap Display Comments */}
           <StyledExternalLink id={`stake-nav-link`} href={'https://info.daoswap.global'}>
-            Charts <span style={{ fontSize: '11px' }}>↗</span>
+            {t('Charts')} <span style={{ fontSize: '11px' }}>↗</span>
           </StyledExternalLink>
         </HeaderLinks>
       </HeaderRow>

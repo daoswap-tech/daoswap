@@ -16,6 +16,7 @@ import { ButtonPrimary } from '../Button'
 import { AutoColumn, ColumnCenter } from '../Column'
 import Confetti from '../Confetti'
 import { Break, CardBGImage, CardBGImageSmaller, CardNoise, CardSection, DataCard } from '../earn/styled'
+import { useTranslation } from 'react-i18next'
 
 import Modal from '../Modal'
 import { RowBetween } from '../Row'
@@ -47,6 +48,7 @@ const USER_AMOUNT = 400
 
 // TODO:Daoswap UNI -> DOI
 export default function ClaimModal() {
+  const { t } = useTranslation()
   const isOpen = useModalOpen(ApplicationModal.SELF_CLAIM)
   const toggleClaimModal = useToggleSelfClaimModal()
 
@@ -99,7 +101,7 @@ export default function ClaimModal() {
             <CardNoise />
             <CardSection gap="md">
               <RowBetween>
-                <TYPE.white fontWeight={500}>Claim DOI</TYPE.white>
+                <TYPE.white fontWeight={500}>{t('Claim')} DOI</TYPE.white>
                 <CloseIcon onClick={toggleClaimModal} style={{ zIndex: 99 }} color="white" />
               </RowBetween>
               <TYPE.white fontWeight={700} fontSize={36}>
@@ -171,7 +173,7 @@ export default function ClaimModal() {
           <AutoColumn gap="100px" justify={'center'}>
             <AutoColumn gap="12px" justify={'center'}>
               <TYPE.largeHeader fontWeight={600} color="black">
-                {claimConfirmed ? 'Claimed!' : 'Claiming'}
+                {claimConfirmed ? t('Claimed') : t('Claiming')}
               </TYPE.largeHeader>
               {!claimConfirmed && (
                 <Text fontSize={36} color={'#ff007a'} fontWeight={800}>
@@ -185,7 +187,7 @@ export default function ClaimModal() {
                   <span role="img" aria-label="party-hat">
                     🎉{' '}
                   </span>
-                  Welcome to team Unicorn :){' '}
+                  Welcome to team Daoswap :){' '}
                   <span role="img" aria-label="party-hat">
                     🎉
                   </span>
@@ -193,11 +195,11 @@ export default function ClaimModal() {
               </>
             )}
             {attempting && !claimSubmitted && (
-              <TYPE.subHeader color="black">Confirm this transaction in your wallet</TYPE.subHeader>
+              <TYPE.subHeader color="black">{t('Confirm this transaction in your wallet')}</TYPE.subHeader>
             )}
             {attempting && claimSubmitted && !claimConfirmed && chainId && claimTxn?.hash && (
               <ExternalLink href={getEtherscanLink(chainId, claimTxn?.hash, 'transaction')} style={{ zIndex: 99 }}>
-                View transaction on Etherscan
+                {t('View transaction on Etherscan')}
               </ExternalLink>
             )}
           </AutoColumn>

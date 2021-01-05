@@ -9,6 +9,7 @@ import { STAKING_REWARDS_INTERFACE } from '../../constants/abis/staking-rewards'
 import { useActiveWeb3React } from '../../hooks'
 import { NEVER_RELOAD, useMultipleContractSingleData } from '../multicall/hooks'
 import { tryParseAmount } from '../swap/hooks'
+import { useTranslation } from 'react-i18next'
 
 // TODO:Daoswap Start Time
 export const STAKING_GENESIS = 1608606000
@@ -257,6 +258,7 @@ export function useDerivedStakeInfo(
   parsedAmount?: CurrencyAmount
   error?: string
 } {
+  const { t } = useTranslation()
   const { account } = useActiveWeb3React()
 
   const parsedInput: CurrencyAmount | undefined = tryParseAmount(typedValue, stakingToken)
@@ -268,10 +270,10 @@ export function useDerivedStakeInfo(
 
   let error: string | undefined
   if (!account) {
-    error = 'Connect Wallet'
+    error = t('Connect Wallet')
   }
   if (!parsedAmount) {
-    error = error ?? 'Enter an amount'
+    error = error ?? t('Enter an amount')
   }
 
   return {
@@ -288,6 +290,7 @@ export function useDerivedUnstakeInfo(
   parsedAmount?: CurrencyAmount
   error?: string
 } {
+  const { t } = useTranslation()
   const { account } = useActiveWeb3React()
 
   const parsedInput: CurrencyAmount | undefined = tryParseAmount(typedValue, stakingAmount.token)
@@ -296,10 +299,10 @@ export function useDerivedUnstakeInfo(
 
   let error: string | undefined
   if (!account) {
-    error = 'Connect Wallet'
+    error = t('Connect Wallet')
   }
   if (!parsedAmount) {
-    error = error ?? 'Enter an amount'
+    error = error ?? t('Enter an amount')
   }
 
   return {

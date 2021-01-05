@@ -13,6 +13,7 @@ import { useV1ExchangeContract } from './useContract'
 import useTransactionDeadline from './useTransactionDeadline'
 import useENS from './useENS'
 import { Version } from './useToggledVersion'
+import { useTranslation } from 'react-i18next'
 
 export enum SwapCallbackState {
   INVALID,
@@ -111,6 +112,7 @@ export function useSwapCallback(
   allowedSlippage: number = INITIAL_ALLOWED_SLIPPAGE, // in bips
   recipientAddressOrName: string | null // the ENS name or address of the recipient of the trade, or null if swap should be returned to sender
 ): { state: SwapCallbackState; callback: null | (() => Promise<string>); error: string | null } {
+  const { t } = useTranslation()
   const { account, chainId, library } = useActiveWeb3React()
 
   const swapCalls = useSwapCallArguments(trade, allowedSlippage, recipientAddressOrName)
@@ -158,7 +160,7 @@ export function useSwapCallback(
                 return contract.callStatic[methodName](...args, options)
                   .then(result => {
                     console.debug('Unexpected successful call after failed estimate gas', call, gasError, result)
-                    return { call, error: new Error('Unexpected issue with estimating the gas. Please try again.') }
+                    return { call, error: new Error(t('Unexpected issue with estimating the gas. Please try again.')) }
                   })
                   .catch(callError => {
                     console.debug('Call threw error', call, callError)
@@ -166,11 +168,14 @@ export function useSwapCallback(
                     switch (callError.reason) {
                       case 'UniswapV2Router: INSUFFICIENT_OUTPUT_AMOUNT':
                       case 'UniswapV2Router: EXCESSIVE_INPUT_AMOUNT':
-                        errorMessage =
+                        errorMessage = t(
                           'This transaction will not succeed either due to price movement or fee on transfer. Try increasing your slippage tolerance.'
+                        )
                         break
                       default:
-                        errorMessage = `The transaction cannot succeed due to error: ${callError.reason}. This is probably an issue with one of the tokens you are swapping.`
+                        errorMessage = `${t('The transaction cannot succeed due to error')}: ${callError.reason}. ${t(
+                          'This is probably an issue with one of the tokens you are swapping.'
+                        )}`
                     }
                     return { call, error: new Error(errorMessage) }
                   })
@@ -187,7 +192,7 @@ export function useSwapCallback(
         if (!successfulEstimation) {
           const errorCalls = estimatedCalls.filter((call): call is FailedCall => 'error' in call)
           if (errorCalls.length > 0) throw errorCalls[errorCalls.length - 1].error
-          throw new Error('Unexpected error. Please contact support: none of the calls threw an error')
+          throw new Error(t('Unexpected error. Please contact support: none of the calls threw an error'))
         }
 
         const {
@@ -208,18 +213,20 @@ export function useSwapCallback(
             const inputAmount = trade.inputAmount.toSignificant(3)
             const outputAmount = trade.outputAmount.toSignificant(3)
 
-            const base = `Swap ${inputAmount} ${inputSymbol} for ${outputAmount} ${outputSymbol}`
+            const base = `${t('Swap')} ${inputAmount} ${inputSymbol} ${t('for')} ${outputAmount} ${outputSymbol}`
             const withRecipient =
               recipient === account
                 ? base
-                : `${base} to ${
+                : `${base} ${t('to')} ${
                     recipientAddressOrName && isAddress(recipientAddressOrName)
                       ? shortenAddress(recipientAddressOrName)
                       : recipientAddressOrName
                   }`
 
             const withVersion =
-              tradeVersion === Version.v2 ? withRecipient : `${withRecipient} on ${(tradeVersion as any).toUpperCase()}`
+              tradeVersion === Version.v2
+                ? withRecipient
+                : `${withRecipient} ${t('on')} ${(tradeVersion as any).toUpperCase()}`
 
             addTransaction(response, {
               summary: withVersion
@@ -230,15 +237,15 @@ export function useSwapCallback(
           .catch((error: any) => {
             // if the user rejected the tx, pass this along
             if (error?.code === 4001) {
-              throw new Error('Transaction rejected.')
+              throw new Error(t('Transaction rejected.'))
             } else {
               // otherwise, the error was unexpected and we need to convey that
-              console.error(`Swap failed`, error, methodName, args, value)
-              throw new Error(`Swap failed: ${error.message}`)
+              console.error(t('Swap failed'), error, methodName, args, value)
+              throw new Error(`${t('Swap failed')}: ${error.message}`)
             }
           })
       },
       error: null
     }
-  }, [trade, library, account, chainId, recipient, recipientAddressOrName, swapCalls, addTransaction])
+  }, [trade, library, account, chainId, recipient, recipientAddressOrName, swapCalls, t, addTransaction])
 }

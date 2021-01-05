@@ -19,6 +19,7 @@ import { CardNoise, CardBGImage, CardBGImageSmaller } from '../earn/styled'
 import { useIsTransactionPending } from '../../state/transactions/hooks'
 import { TokenAmount } from '@uniswap/sdk'
 import { getEtherscanLink, shortenAddress } from '../../utils'
+import { useTranslation } from 'react-i18next'
 
 const ContentWrapper = styled(AutoColumn)`
   width: 100%;
@@ -26,7 +27,7 @@ const ContentWrapper = styled(AutoColumn)`
 
 const ModalUpper = styled(DataCard)`
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #A43BD4 0%, #021d43 100%);
+  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #a43bd4 0%, #021d43 100%);
 `
 
 const ConfirmOrLoadingWrapper = styled.div<{ activeBG: boolean }>`
@@ -44,6 +45,7 @@ const ConfirmedIcon = styled(ColumnCenter)`
 
 // TODO:Daoswap UNI -> DOI
 export default function AddressClaimModal({ isOpen, onDismiss }: { isOpen: boolean; onDismiss: () => void }) {
+  const { t } = useTranslation()
   const { chainId } = useActiveWeb3React()
 
   // state for smart contract input
@@ -103,7 +105,7 @@ export default function AddressClaimModal({ isOpen, onDismiss }: { isOpen: boole
             <CardNoise />
             <CardSection gap="md">
               <RowBetween>
-                <TYPE.white fontWeight={500}>Claim DOI Token</TYPE.white>
+                <TYPE.white fontWeight={500}>{t('Claim DOI Token')}</TYPE.white>
                 <CloseIcon onClick={wrappedOnDismiss} style={{ zIndex: 99 }} stroke="white" />
               </RowBetween>
               <TYPE.white fontWeight={700} fontSize={36}>
@@ -114,12 +116,13 @@ export default function AddressClaimModal({ isOpen, onDismiss }: { isOpen: boole
           </ModalUpper>
           <AutoColumn gap="md" style={{ padding: '1rem', paddingTop: '0' }} justify="center">
             <TYPE.subHeader fontWeight={500}>
-              Enter an address to trigger a DOI claim. If the address has any claimable DOI it will be sent to them on
-              submission.
+              {t(
+                'Enter an address to trigger a DOI claim. If the address has any claimable DOI it will be sent to them on submission.'
+              )}
             </TYPE.subHeader>
             <AddressInputPanel value={typed} onChange={handleRecipientType} />
             {parsedAddress && !hasAvailableClaim && (
-              <TYPE.error error={true}>Address has no available claim</TYPE.error>
+              <TYPE.error error={true}>{t('Address has no available claim')}</TYPE.error>
             )}
             <ButtonPrimary
               disabled={!isAddress(parsedAddress ?? '') || !hasAvailableClaim}
@@ -129,7 +132,7 @@ export default function AddressClaimModal({ isOpen, onDismiss }: { isOpen: boole
               mt="1rem"
               onClick={onClaim}
             >
-              Claim DOI
+              {t('Claim')} DOI
             </ButtonPrimary>
           </AutoColumn>
         </ContentWrapper>
@@ -152,7 +155,7 @@ export default function AddressClaimModal({ isOpen, onDismiss }: { isOpen: boole
           <AutoColumn gap="100px" justify={'center'}>
             <AutoColumn gap="12px" justify={'center'}>
               <TYPE.largeHeader fontWeight={600} color="black">
-                {claimConfirmed ? 'Claimed' : 'Claiming'}
+                {claimConfirmed ? t('Claimed') : t('Claiming')}
               </TYPE.largeHeader>
               {!claimConfirmed && (
                 <Text fontSize={36} color={'#A43BD4'} fontWeight={800}>
@@ -161,7 +164,7 @@ export default function AddressClaimModal({ isOpen, onDismiss }: { isOpen: boole
               )}
               {parsedAddress && (
                 <TYPE.largeHeader fontWeight={600} color="black">
-                  for {shortenAddress(parsedAddress)}
+                  {t('for')} {shortenAddress(parsedAddress)}
                 </TYPE.largeHeader>
               )}
             </AutoColumn>
@@ -171,7 +174,7 @@ export default function AddressClaimModal({ isOpen, onDismiss }: { isOpen: boole
                   <span role="img" aria-label="party-hat">
                     🎉{' '}
                   </span>
-                  Welcome to team Unicorn :){' '}
+                  Welcome to team Daoswap :){' '}
                   <span role="img" aria-label="party-hat">
                     🎉
                   </span>
@@ -179,11 +182,11 @@ export default function AddressClaimModal({ isOpen, onDismiss }: { isOpen: boole
               </>
             )}
             {attempting && !hash && (
-              <TYPE.subHeader color="black">Confirm this transaction in your wallet</TYPE.subHeader>
+              <TYPE.subHeader color="black">{t('Confirm this transaction in your wallet')}</TYPE.subHeader>
             )}
             {attempting && hash && !claimConfirmed && chainId && hash && (
               <ExternalLink href={getEtherscanLink(chainId, hash, 'transaction')} style={{ zIndex: 99 }}>
-                View transaction on Etherscan
+                {t('View transaction on Etherscan')}
               </ExternalLink>
             )}
           </AutoColumn>

@@ -9,6 +9,7 @@ import { CardSection, DataCard, CardNoise, CardBGImage } from '../../components/
 import { Countdown } from './Countdown'
 import Loader from '../../components/Loader'
 import { useActiveWeb3React } from '../../hooks'
+import { useTranslation } from 'react-i18next'
 
 const PageWrapper = styled(AutoColumn)`
   max-width: 640px;
@@ -31,6 +32,7 @@ const PoolSection = styled.div`
 
 // TODO:Daoswap UNI -> DOI
 export default function Earn() {
+  const { t } = useTranslation()
   const { chainId } = useActiveWeb3React()
   const stakingInfos = useStakingInfo()
 
@@ -51,11 +53,11 @@ export default function Earn() {
           <CardSection>
             <AutoColumn gap="md">
               <RowBetween>
-                <TYPE.white fontWeight={600}>Daoswap liquidity mining</TYPE.white>
+                <TYPE.white fontWeight={600}>Daoswap {t('liquidity mining')}</TYPE.white>
               </RowBetween>
               <RowBetween>
                 <TYPE.white fontSize={14}>
-                  Deposit your Liquidity Provider tokens to receive DOI, the Daoswap protocol governance token.
+                  {t('Deposit your Liquidity Provider tokens to receive DOI, the Daoswap protocol governance token.')}
                 </TYPE.white>
               </RowBetween>{' '}
               <ExternalLink
@@ -63,7 +65,7 @@ export default function Earn() {
                 href="https://uniswap.org/blog/uni/"
                 target="_blank"
               >
-                <TYPE.white fontSize={14}>Read more about DOI</TYPE.white>
+                <TYPE.white fontSize={14}>{t('Read more about DOI')}</TYPE.white>
               </ExternalLink>
             </AutoColumn>
           </CardSection>
@@ -74,7 +76,7 @@ export default function Earn() {
 
       <AutoColumn gap="lg" style={{ width: '100%', maxWidth: '720px' }}>
         <DataRow style={{ alignItems: 'baseline' }}>
-          <TYPE.mediumHeader style={{ marginTop: '0.5rem' }}>Participating pools</TYPE.mediumHeader>
+          <TYPE.mediumHeader style={{ marginTop: '0.5rem' }}>{t('Participating pools')}</TYPE.mediumHeader>
           <Countdown exactEnd={stakingInfos?.[0]?.periodFinish} />
         </DataRow>
 
@@ -82,7 +84,7 @@ export default function Earn() {
           {stakingRewardsExist && stakingInfos?.length === 0 ? (
             <Loader style={{ margin: 'auto' }} />
           ) : !stakingRewardsExist ? (
-            'No active rewards'
+            t('No active rewards')
           ) : (
             stakingInfos?.map(stakingInfo => {
               // need to sort by added liquidity here

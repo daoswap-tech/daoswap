@@ -20,6 +20,7 @@ import { wrappedCurrencyAmount } from '../../utils/wrappedCurrency'
 import { TransactionResponse } from '@ethersproject/providers'
 import { useTransactionAdder } from '../../state/transactions/hooks'
 import { LoadingView, SubmittedView } from '../ModalViews'
+import { useTranslation } from 'react-i18next'
 
 const HypotheticalRewardRate = styled.div<{ dim: boolean }>`
   display: flex;
@@ -44,6 +45,7 @@ interface StakingModalProps {
 
 // TODO:Daoswap UNI -> DOI
 export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiquidityUnstaked }: StakingModalProps) {
+  const { t } = useTranslation()
   const { account, chainId, library } = useActiveWeb3React()
 
   // track and parse user input
@@ -98,7 +100,7 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
           )
           .then((response: TransactionResponse) => {
             addTransaction(response, {
-              summary: `Deposit liquidity`
+              summary: t('Deposit liquidity')
             })
             setHash(response.hash)
           })
@@ -108,7 +110,7 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
           })
       } else {
         setAttempting(false)
-        throw new Error('Attempting to stake without approval or a signature. Please contact support.')
+        throw new Error(t('Attempting to stake without approval or a signature. Please contact support.'))
       }
     }
   }
@@ -127,9 +129,9 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
   }, [maxAmountInput, onUserInput])
 
   async function onAttemptToApprove() {
-    if (!pairContract || !library || !deadline) throw new Error('missing dependencies')
+    if (!pairContract || !library || !deadline) throw new Error(t('missing dependencies'))
     const liquidityAmount = parsedAmount
-    if (!liquidityAmount) throw new Error('missing liquidity amount')
+    if (!liquidityAmount) throw new Error(t('missing liquidity amount'))
 
     if (isArgentWallet) {
       return approveCallback()
@@ -198,7 +200,7 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
       {!attempting && !hash && (
         <ContentWrapper gap="lg">
           <RowBetween>
-            <TYPE.mediumHeader>Deposit</TYPE.mediumHeader>
+            <TYPE.mediumHeader>{t('Deposit')}</TYPE.mediumHeader>
             <CloseIcon onClick={wrappedOnDismiss} />
           </RowBetween>
           <CurrencyInputPanel
@@ -210,18 +212,18 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
             pair={dummyPair}
             label={''}
             disableCurrencySelect={true}
-            customBalanceText={'Available to deposit: '}
+            customBalanceText={t('Available to deposit') + ': '}
             id="stake-liquidity-token"
           />
 
           <HypotheticalRewardRate dim={!hypotheticalRewardRate.greaterThan('0')}>
             <div>
-              <TYPE.black fontWeight={600}>Weekly Rewards</TYPE.black>
+              <TYPE.black fontWeight={600}>{t('Weekly Rewards')}</TYPE.black>
             </div>
 
             <TYPE.black>
               {hypotheticalRewardRate.multiply((60 * 60 * 24 * 7).toString()).toSignificant(4, { groupSeparator: ',' })}{' '}
-              DOI / week
+              DOI / {t('week')}
             </TYPE.black>
           </HypotheticalRewardRate>
 
@@ -232,14 +234,14 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
               confirmed={approval === ApprovalState.APPROVED || signatureData !== null}
               disabled={approval !== ApprovalState.NOT_APPROVED || signatureData !== null}
             >
-              Approve
+              {t('Approve')}
             </ButtonConfirmed>
             <ButtonError
               disabled={!!error || (signatureData === null && approval !== ApprovalState.APPROVED)}
               error={!!error && !!parsedAmount}
               onClick={onStake}
             >
-              {error ?? 'Deposit'}
+              {error ?? t('Deposit')}
             </ButtonError>
           </RowBetween>
           <ProgressCircles steps={[approval === ApprovalState.APPROVED || signatureData !== null]} disabled={true} />
@@ -248,7 +250,7 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
       {attempting && !hash && (
         <LoadingView onDismiss={wrappedOnDismiss}>
           <AutoColumn gap="12px" justify={'center'}>
-            <TYPE.largeHeader>Depositing Liquidity</TYPE.largeHeader>
+            <TYPE.largeHeader>{t('Depositing Liquidity')}</TYPE.largeHeader>
             <TYPE.body fontSize={20}>{parsedAmount?.toSignificant(4)} DLT</TYPE.body>
           </AutoColumn>
         </LoadingView>
@@ -256,8 +258,10 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
       {attempting && hash && (
         <SubmittedView onDismiss={wrappedOnDismiss} hash={hash}>
           <AutoColumn gap="12px" justify={'center'}>
-            <TYPE.largeHeader>Transaction Submitted</TYPE.largeHeader>
-            <TYPE.body fontSize={20}>Deposited {parsedAmount?.toSignificant(4)} DLT</TYPE.body>
+            <TYPE.largeHeader>{t('Transaction Submitted')}</TYPE.largeHeader>
+            <TYPE.body fontSize={20}>
+              {t('Deposited')} {parsedAmount?.toSignificant(4)} DLT
+            </TYPE.body>
           </AutoColumn>
         </SubmittedView>
       )}

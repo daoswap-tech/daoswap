@@ -9,6 +9,7 @@ import { useModalOpen, useToggleModal } from '../../state/application/hooks'
 
 import { ExternalLink } from '../../theme'
 // import { ButtonPrimary } from '../Button'
+import { useTranslation } from 'react-i18next'
 
 const StyledMenuIcon = styled(MenuIcon)`
   path {
@@ -89,6 +90,7 @@ const CODE_LINK = 'https://github.com/daoswap-tech/daoswap'
 
 // TODO:Daoswap UNI -> DOI
 export default function Menu() {
+  const { t } = useTranslation()
   // const { account } = useActiveWeb3React()
 
   const node = useRef<HTMLDivElement>()
@@ -109,15 +111,15 @@ export default function Menu() {
         <MenuFlyout>
           <MenuItem id="link" href="https://www.daoswap.global/">
             <Info size={14} />
-            Daoswap
+            {t('Daoswap')}
           </MenuItem>
           <MenuItem id="link" href="https://www.daoswap.global/whitepaper.pdf">
             <BookOpen size={14} />
-            Docs
+            {t('Docs')}
           </MenuItem>
           <MenuItem id="link" href={CODE_LINK}>
             <Code size={14} />
-            Code
+            {t('Code')}
           </MenuItem>
           <MenuItem id="link" href="https://twitter.com/SwapDao">
             <MessageCircle size={14} />
@@ -125,7 +127,7 @@ export default function Menu() {
           </MenuItem>
           <MenuItem id="link" href="https://info.daoswap.global/">
             <PieChart size={14} />
-            Analytics
+            {t('Analytics')}
           </MenuItem>
           {/* {account && (
             <ButtonPrimary onClick={openClaimModal} padding="8px 16px" width="100%" borderRadius="12px" mt="0.5rem">
