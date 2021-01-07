@@ -317,5 +317,9 @@
   "Claim accumulated DOI rewards": "Claim accumulated DOI rewards",
   "Enter an address to trigger a DOI claim. If the address has any claimable DOI it will be sent to them on submission.": "Enter an address to trigger a DOI claim. If the address has any claimable DOI it will be sent to them on submission.",
   "Claim DOI Token": "Claim DOI Token",
-  "Address has no available claim": "Address has no available claim"
+  "Address has no available claim": "Address has no available claim",
+  "Your DOI Breakdown": "Your DOI Breakdown",
+  "price": "price",
+  "Total Supply": "Total Supply",
+  "View DOI Analytics": "View DOI Analytics"
 }
