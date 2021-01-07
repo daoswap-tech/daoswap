@@ -302,5 +302,9 @@
   "Claim accumulated DOI rewards": "提取累积的DOI奖励",
   "Enter an address to trigger a DOI claim. If the address has any claimable DOI it will be sent to them on submission.": "输入地址以进行DOI提取。如果地址有可提取的DOI，则会在提交后将其发送给他们。",
   "Claim DOI Token": "提取DOI代币",
-  "Address has no available claim": "地址没有可以提取的"
+  "Address has no available claim": "地址没有可以提取的",
+  "Your DOI Breakdown": "你的DOI明细",
+  "price": "价格",
+  "Total Supply": "总发行量",
+  "View DOI Analytics": "查看DOI分析"
 }
