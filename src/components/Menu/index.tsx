@@ -1,8 +1,8 @@
 import React, { useRef } from 'react'
-import { BookOpen, Code, Info, MessageCircle, PieChart } from 'react-feather'
+import { BookOpen, Code, Info, MessageCircle, PieChart, Gift } from 'react-feather'
 import styled from 'styled-components'
 import { ReactComponent as MenuIcon } from '../../assets/images/menu.svg'
-// import { useActiveWeb3React } from '../../hooks'
+import { useActiveWeb3React } from '../../hooks'
 import { useOnClickOutside } from '../../hooks/useOnClickOutside'
 import { ApplicationModal } from '../../state/application/actions'
 import { useModalOpen, useToggleModal } from '../../state/application/hooks'
@@ -91,7 +91,7 @@ const CODE_LINK = 'https://github.com/daoswap-tech/daoswap'
 // TODO:Daoswap UNI -> DOI
 export default function Menu() {
   const { t } = useTranslation()
-  // const { account } = useActiveWeb3React()
+  const { account } = useActiveWeb3React()
 
   const node = useRef<HTMLDivElement>()
   const open = useModalOpen(ApplicationModal.MENU)
@@ -129,11 +129,15 @@ export default function Menu() {
             <PieChart size={14} />
             {t('Analytics')}
           </MenuItem>
-          {/* {account && (
-            <ButtonPrimary onClick={openClaimModal} padding="8px 16px" width="100%" borderRadius="12px" mt="0.5rem">
-              Claim DOI
-            </ButtonPrimary>
-          )} */}
+          {account && (
+            // <ButtonPrimary onClick={openClaimModal} padding="8px 16px" width="100%" borderRadius="12px" mt="0.5rem">
+            //   Claim DOI
+            // </ButtonPrimary>
+            <MenuItem id="link" href="https://claim.daoswap.global/">
+              <Gift size={14} />
+              {t('Claim DOI')}
+            </MenuItem>
+          )}
         </MenuFlyout>
       )}
     </StyledMenu>
