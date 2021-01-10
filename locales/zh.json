@@ -133,6 +133,7 @@
   "Insufficient WETH balance": "WETH余额不足",
   "MAX": "最大值",
   "Confirm Swap": "确认交换",
+  "Swap Anyway": "继续交易",
   "Output is estimated. You will receive at least": "预估转出。你至少会收到",
   "or the transaction will revert.": "否则交易将回滚。",
   "Input is estimated. You will sell at most": "预估转入。你最多只能卖",
