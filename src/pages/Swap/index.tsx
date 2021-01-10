@@ -432,7 +432,7 @@ export default function Swap() {
                   <Text fontSize={16} fontWeight={500}>
                     {priceImpactSeverity > 3 && !isExpertMode
                       ? t('Price Impact High')
-                      : `Swap${priceImpactSeverity > 2 ? ' Anyway' : ''}`}
+                      : t(`Swap${priceImpactSeverity > 2 ? ' Anyway' : ''}`)}
                   </Text>
                 </ButtonError>
               </RowBetween>
@@ -460,7 +460,7 @@ export default function Swap() {
                     ? swapInputError
                     : priceImpactSeverity > 3 && !isExpertMode
                     ? t('Price Impact Too High')
-                    : `Swap${priceImpactSeverity > 2 ? ' Anyway' : ''}`}
+                    : t(`Swap${priceImpactSeverity > 2 ? ' Anyway' : ''}`)}
                 </Text>
               </ButtonError>
             )}

@@ -157,7 +157,7 @@
   "The transaction cannot succeed due to error": "由于错误，交易无法成功",
   "This is probably an issue with one of the tokens you are swapping.": "这可能是您正在交换的令牌之一的问题。",
   "Unexpected error. Please contact support: none of the calls threw an error": "意外错误。请与支持部门联系：所有呼叫均未引发错误",
-  "Swap": "交换",
+  "Swap": "交易",
   "on": "在",
   "Select a token": "选择代币",
   "Find a token by searching for its name or symbol or by pasting its address below.": "通过搜索令牌的名称或符号或将其地址粘贴到下面来查找令牌。",
