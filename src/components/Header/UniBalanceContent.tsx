@@ -14,7 +14,8 @@ import { useAggregateUniBalance, useTokenBalance } from '../../state/wallet/hook
 import { ExternalLink, TYPE, UniTokenAnimated } from '../../theme'
 // import { ExternalLink, StyledInternalLink, TYPE, UniTokenAnimated } from '../../theme'
 // import { computeUniCirculation } from '../../utils/computeUniCirculation'
-import useUSDCPrice from '../../utils/useUSDCPrice'
+// import useUSDCPrice from '../../utils/useUSDCPrice'
+import useUSDTPrice from '../../utils/useUSDTPrice'
 import { AutoColumn } from '../Column'
 import { RowBetween } from '../Row'
 import { Break, CardBGImage, CardNoise, CardSection, DataCard } from '../earn/styled'
@@ -54,7 +55,8 @@ export default function UniBalanceContent({ setShowUniBalanceModal }: { setShowU
   const uniToClaim: TokenAmount | undefined = useTotalUniEarned()
 
   const totalSupply: TokenAmount | undefined = useTotalSupply(uni)
-  const uniPrice = useUSDCPrice(uni)
+  const uniPrice = useUSDTPrice(uni)
+  // const uniPrice = useUSDCPrice(uni)
   // const blockTimestamp = useCurrentBlockTimestamp()
   // const unclaimedUni = useTokenBalance(useMerkleDistributorContract()?.address, uni)
   // const circulation: TokenAmount | undefined = useMemo(
