@@ -26,6 +26,14 @@
       "symbol":"USDC",
       "decimals":6,
       "logoURI":"https://app.daoswap.global/images/token-logo/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/thumb.png"
+    },
+    {
+      "chainId": 1,
+      "address": "0x7Ef5ac1FE8B6832EbAddEE1856E4A21E46843565",
+      "name": "Daoswap",
+      "symbol": "DOI",
+      "decimals": 18,
+      "logoURI": "https://app.daoswap.global/daoswap.svg"
     }
   ],
   "version": { "major": 0, "minor": 0, "patch": 0 }
