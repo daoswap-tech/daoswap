@@ -15,7 +15,7 @@ import { ExternalLink, TYPE, UniTokenAnimated } from '../../theme'
 // import { ExternalLink, StyledInternalLink, TYPE, UniTokenAnimated } from '../../theme'
 // import { computeUniCirculation } from '../../utils/computeUniCirculation'
 // import useUSDCPrice from '../../utils/useUSDCPrice'
-// import useUSDTPrice from '../../utils/useUSDTPrice'
+import useUSDTPrice from '../../utils/useUSDTPrice'
 import { AutoColumn } from '../Column'
 import { RowBetween } from '../Row'
 import { Break, CardBGImage, CardNoise, CardSection, DataCard } from '../earn/styled'
@@ -55,7 +55,7 @@ export default function UniBalanceContent({ setShowUniBalanceModal }: { setShowU
   const uniToClaim: TokenAmount | undefined = useTotalUniEarned()
 
   const totalSupply: TokenAmount | undefined = useTotalSupply(uni)
-  // const uniPrice = useUSDTPrice(uni)
+  const uniPrice = useUSDTPrice(uni)
   // const uniPrice = useUSDCPrice(uni)
   // const blockTimestamp = useCurrentBlockTimestamp()
   // const unclaimedUni = useTokenBalance(useMerkleDistributorContract()?.address, uni)
@@ -111,10 +111,10 @@ export default function UniBalanceContent({ setShowUniBalanceModal }: { setShowU
         )}
         <CardSection gap="sm">
           <AutoColumn gap="md">
-            {/* <RowBetween>
+            <RowBetween>
               <TYPE.white color="white">DOI {t('price')}:</TYPE.white>
               <TYPE.white color="white">${uniPrice?.toFixed(2) ?? '-'}</TYPE.white>
-            </RowBetween> */}
+            </RowBetween>
             {/* <RowBetween>
               <TYPE.white color="white">DOI in circulation:</TYPE.white>
               <TYPE.white color="white">{circulation?.toFixed(0, { groupSeparator: ',' })}</TYPE.white>
