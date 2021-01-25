@@ -19,7 +19,7 @@ import useToggledVersion from '../../hooks/useToggledVersion'
 import { useUserSlippageTolerance } from '../user/hooks'
 import { computeSlippageAdjustedAmounts } from '../../utils/prices'
 import { useTranslation } from 'react-i18next'
-// import { DOI_ADDRESS } from '../../constants'
+import { DOI_ADDRESS } from '../../constants'
 
 export function useSwapState(): AppState['swap'] {
   return useSelector<AppState, AppState['swap']>(state => state.swap)
@@ -174,9 +174,9 @@ export function useDerivedSwapInfo(): {
     inputError = inputError ?? t('Select a token')
   }
 
-  // if (DOI_ADDRESS === inputCurrencyId) {
-  //   inputError = inputError ?? t('DOI is not tradable')
-  // }
+  if (DOI_ADDRESS === inputCurrencyId) {
+    inputError = inputError ?? t('DOI is not tradable')
+  }
 
   const formattedTo = isAddress(to)
   if (!to || !formattedTo) {
