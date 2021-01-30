@@ -17,9 +17,9 @@ import { Field, replaceSwapState, selectCurrency, setRecipient, switchCurrencies
 import { SwapState } from './reducer'
 import useToggledVersion from '../../hooks/useToggledVersion'
 import { useUserSlippageTolerance } from '../user/hooks'
-import { computeSlippageAdjustedAmounts } from '../../utils/prices'
+import { computeSlippageAdjustedAmounts, computeTradePriceBreakdown, warningSeverity } from '../../utils/prices'
 import { useTranslation } from 'react-i18next'
-// import { DOI_ADDRESS } from '../../constants'
+import { DOI_ADDRESS } from '../../constants'
 
 export function useSwapState(): AppState['swap'] {
   return useSelector<AppState, AppState['swap']>(state => state.swap)
@@ -177,6 +177,16 @@ export function useDerivedSwapInfo(): {
   // if (DOI_ADDRESS === inputCurrencyId) {
   //   inputError = inputError ?? t('DOI is not tradable')
   // }
+
+  if (v2Trade && DOI_ADDRESS === inputCurrencyId) {
+    const { priceImpactWithoutFee } = computeTradePriceBreakdown(v2Trade)
+    const priceImpactSeverity = warningSeverity(priceImpactWithoutFee)
+    console.info(priceImpactWithoutFee)
+    console.info(priceImpactSeverity)
+    if (priceImpactSeverity >= 1) {
+      inputError = inputError ?? t('Price Impact High')
+    }
+  }
 
   const formattedTo = isAddress(to)
   if (!to || !formattedTo) {
