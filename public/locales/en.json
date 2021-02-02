@@ -324,5 +324,8 @@
   "price": "price",
   "Total Supply": "Total Supply",
   "View DOI Analytics": "View DOI Analytics",
-  "Claim DOI": "Claim DOI"
+  "Claim DOI": "Claim DOI",
+
+  "DOI Stake Activity": "Activity",
+  "DOI Stake Ended": "Ended"
 }

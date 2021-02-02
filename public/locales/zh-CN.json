@@ -309,5 +309,8 @@
   "price": "价格",
   "Total Supply": "总发行量",
   "View DOI Analytics": "查看DOI分析",
-  "Claim DOI": "提取DOI"
+  "Claim DOI": "提取DOI",
+
+  "DOI Stake Activity": "进行中",
+  "DOI Stake Ended": "已结束"
 }
