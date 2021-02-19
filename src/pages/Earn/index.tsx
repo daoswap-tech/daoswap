@@ -87,7 +87,8 @@ export default function Earn() {
           {stakingRewardsExist && stakingInfos?.length === 0 ? (
             <Loader style={{ margin: 'auto' }} />
           ) : !stakingRewardsExist ? (
-            t('No active rewards')
+            // t('No active rewards')
+            t('DOI Activity Notice')
           ) : (
             stakingInfos?.map(stakingInfo => {
               // need to sort by added liquidity here
